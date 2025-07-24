@@ -2,10 +2,25 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>LMFAC - Carregando...</title>
-    <meta http-equiv="refresh" content="0; url=frontend/index.html">
+    <title>Redirecionando...</title>
+    <script>
+        // Redirecionamento 100% garantido
+        if(window.location.pathname === "/") {
+            window.location.href = "frontend/index.html";
+        }
+    </script>
 </head>
-<body>
-    <p>Se não for redirecionado automaticamente, <a href="frontend/index.html">clique aqui</a>.</p>
+<body style="font-family: Arial; text-align: center; padding: 50px;">
+    <h1>LMFAC Advocacia</h1>
+    <p>Se não for redirecionado automaticamente em 5 segundos:</p>
+    <a href="frontend/index.html" style="color: blue;">Clique aqui para acessar o site</a>
+    
+    <script>
+        // Fallback após 5 segundos
+        setTimeout(() => {
+            document.querySelector('a').style.color = "red";
+            document.querySelector('a').textContent += " (URGENTE)";
+        }, 5000);
+    </script>
 </body>
 </html>
