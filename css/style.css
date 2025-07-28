@@ -23,44 +23,70 @@ body {
 }
 
 /* --- CABEÇALHO --- */
+/* --- CABEÇALHO --- */
 header {
-    background-color: #FFF;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    /* Define a sua imagem de fundo */
+    background-image: url('../assets/img/cabecalho.jpg');
+
+    /* Configurações para a imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir todo o espaço */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+
+    /* Ajustes no espaçamento e cor do texto para melhor leitura sobre a imagem */
+    padding: 50px 0; /* Aumenta a altura do cabeçalho para a imagem aparecer melhor */
+    position: relative; /* Necessário para o efeito de sobreposição */
+    color: #FFF; /* Define a cor do texto padrão do cabeçalho como branco */
 }
 
+/* Adiciona uma sobreposição escura para melhorar a legibilidade do texto */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2); /* Sobreposição preta com 20% de opacidade. Ajuste se precisar. */
+    z-index: 1;
+}
+
+/* Garante que o conteúdo (logo e menu) fique na frente da sobreposição */
 header .container {
+    position: relative;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Ajusta a cor do logo e dos links para branco, para contrastar com o fundo escuro */
 header .logo {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
-    color: #002366; /* Azul Escuro */
+    color: #FFF;
     text-decoration: none;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
 header nav a {
     text-decoration: none;
-    color: #333;
+    color: #FFF;
     font-weight: 500;
+    font-size: 1.1em;
     transition: color 0.3s;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Adiciona uma leve sombra ao texto para legibilidade */
 }
 
 header nav a:hover {
-    color: #D4AF37; /* Dourado */
+    color: #D4AF37; /* Dourado para o efeito hover */
 }
+
 
 /* --- RODAPÉ --- */
 footer {
