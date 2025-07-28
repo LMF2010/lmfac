@@ -56,17 +56,19 @@ header .container {
     position: relative;
     z-index: 2;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* <<< MUDANÇA PRINCIPAL: Alinha tudo à direita */
     align-items: center;
 }
 
+
 /* Ajusta a cor do logo e dos links para branco, para contrastar com o fundo escuro */
 header .logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #FFF;
-    text-decoration: none;
+    /* Truque para esconder o texto sem removê-lo do HTML */
+    text-indent: -9999px;
+    display: block; /* Garante que o truque funcione */
+    width: 200px; /* Apenas para dar um espaço ocupado invisível */
 }
+
 
 header nav ul {
     list-style: none;
