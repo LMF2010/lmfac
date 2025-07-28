@@ -22,72 +22,57 @@ body {
     padding: 60px 0;
 }
 
-/* --- CABEÇALHO --- */
-/* --- CABEÇALHO --- */
-header {
-    /* Define a sua imagem de fundo */
+
+/* --- NOVA ESTRUTURA DE CABEÇALHO E MENU --- */
+
+/* 1. O Banner com a Imagem de Fundo */
+.top-banner {
     background-image: url('../assets/img/cabecalho.jpg');
-
-    /* Configurações para a imagem de fundo */
-    background-size: cover; /* Faz a imagem cobrir todo o espaço */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-
-    /* Ajustes no espaçamento e cor do texto para melhor leitura sobre a imagem */
-    padding: 50px 0; /* Aumenta a altura do cabeçalho para a imagem aparecer melhor */
-    position: relative; /* Necessário para o efeito de sobreposição */
-    color: #FFF; /* Define a cor do texto padrão do cabeçalho como branco */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 150px; /* Altura do seu banner. Ajuste se necessário. */
+    display: block;
 }
 
-/* Adiciona uma sobreposição escura para melhorar a legibilidade do texto */
-header::before {
-    content: '';
-    position: absolute;
+/* 2. A Barra de Navegação (antigo header) */
+header {
+    background-color: #F4F1DE; /* Cor de fundo bege/linho da sua paleta */
+    padding: 15px 0;
+    border-bottom: 1px solid #e0dcd1;
+    text-align: center; /* Centraliza o menu */
+    position: sticky; /* Faz o menu grudar no topo ao rolar a página */
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.2); /* Sobreposição preta com 20% de opacidade. Ajuste se precisar. */
-    z-index: 1;
+    z-index: 1000;
 }
 
-/* Garante que o conteúdo (logo e menu) fique na frente da sobreposição */
-header .container {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: flex-end; /* <<< MUDANÇA PRINCIPAL: Alinha tudo à direita */
-    align-items: center;
+/* Esconde o link do logo que agora é desnecessário visualmente */
+header .logo-link {
+    display: none;
 }
-
-
-/* Ajusta a cor do logo e dos links para branco, para contrastar com o fundo escuro */
-header .logo {
-    /* Truque para esconder o texto sem removê-lo do HTML */
-    text-indent: -9999px;
-    display: block; /* Garante que o truque funcione */
-    width: 200px; /* Apenas para dar um espaço ocupado invisível */
-}
-
 
 header nav ul {
     list-style: none;
-    display: flex;
-    gap: 30px;
+    display: inline-flex; /* Faz os itens ficarem na mesma linha */
+    justify-content: center;
+    gap: 40px; /* Espaçamento entre os itens do menu */
 }
 
 header nav a {
     text-decoration: none;
-    color: #FFF;
-    font-weight: 500;
+    color: #6D2E46; /* Cor Vinho para o texto, para bom contraste */
+    font-weight: 600; /* Deixa a fonte um pouco mais forte */
     font-size: 1.1em;
-    transition: color 0.3s;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Adiciona uma leve sombra ao texto para legibilidade */
+    padding: 10px 0;
+    transition: color 0.3s, border-bottom-color 0.3s;
+    border-bottom: 2px solid transparent; /* Borda inferior transparente para o efeito hover */
 }
 
 header nav a:hover {
-    color: #D4AF37; /* Dourado para o efeito hover */
+    color: #002366; /* Azul Escuro no hover */
+    border-bottom-color: #002366; /* Mostra a borda no hover */
 }
+
 
 
 /* --- RODAPÉ --- */
