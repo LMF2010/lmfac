@@ -154,8 +154,54 @@ footer {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2em; color: #002366; }
-.services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-.service-card { background-color: #FFF; border: 1px solid #eee; border-left: 5px solid #D4AF37; padding: 30px; border-radius: 8px; width: 280px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; }
+/* --- SEÇÃO DE SERVIÇOS REESTRUTURADA --- */
+
+.services-grid {
+    display: grid; /* Ativa o superpoder do CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* A MÁGICA: Cria colunas flexíveis. */
+    gap: 30px; /* O espaço entre os cards */
+}
+
+.service-card {
+    background-color: #FFF;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: left; /* Alinha o texto à esquerda para melhor leitura */
+    display: flex; /* Ativa o Flexbox DENTRO do card */
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Efeito de elevação mais pronunciado */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+    color: #002366; /* Azul escuro para o título */
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    flex-grow: 1; /* FAZ O TEXTO OCUPAR O ESPAÇO DISPONÍVEL, empurrando o botão para baixo */
+    margin-bottom: 25px;
+}
+
+/* Estilo do novo botão "Saiba Mais" */
+.card-cta {
+    color: #D4AF37; /* Dourado */
+    text-decoration: none;
+    font-weight: bold;
+    align-self: flex-start; /* Alinha o botão à esquerda do card */
+    transition: color 0.3s ease;
+}
+
+.card-cta:hover {
+    color: #002366; /* Azul escuro no hover */
+}
+
 .about-section, .ebook-section { background-color: #F3F7F5; }
 
 .ebook-text {
