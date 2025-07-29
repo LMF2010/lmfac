@@ -139,13 +139,30 @@ footer {
 .hero-text p { font-size: 1.2em; color: #333; margin-bottom: 30px; }
 .hero-image img { max-width: 350px; height: auto; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 .cta-button { background-color: #D4AF37; color: #FFF; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s; }
-.cta-button:hover { background-color: #b89b31; }
+.cta-button:hover {
+    background-color: #b89b31;
+    transform: translateY(-3px); /* Efeito de levantar sutilmente */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2em; color: #002366; }
 .services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
 .service-card { background-color: #FFF; border: 1px solid #eee; border-left: 5px solid #D4AF37; padding: 30px; border-radius: 8px; width: 280px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; }
 .about-section, .ebook-section { background-color: #F3F7F5; }
-.about-content, .ebook-content { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-.about-text, .ebook-text { max-width: 600px; }
+
+.ebook-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Alinha verticalmente */
+    gap: 40px; 
+}
+
+.ebook-text {
+    max-width: 600px;
+    text-align: center;
+.ebook-text p {
+    margin-bottom: 30px;
+
 .ebook-image img { max-width: 300px; border-radius: 8px; }
 
 
