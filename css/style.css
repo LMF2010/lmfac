@@ -268,65 +268,143 @@ footer {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* --- ESTILOS DA PÁGINA SOBRE MIM --- */
+/*
+==============================================
+--- ESTILOS EXCLUSIVOS PÁGINA "SOBRE MIM" ---
+==============================================
+*/
 
-.about-page-content .container {
-    max-width: 900px; /* Container um pouco mais estreito para melhor leitura */
+/* Define as fontes para a página */
+.about-me-main-container {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    padding: 4rem 2rem; /* Espaçamento generoso */
 }
 
-.about-flex-container {
+/* O layout dividido 50/50 */
+.about-me-split-layout {
     display: flex;
-    flex-wrap: wrap; /* Permite quebrar em telas menores */
-    align-items: flex-start; /* Alinha os itens no topo */
-    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+    align-items: center;
+    gap: 3rem;
 }
 
-.about-page-image {
-    flex: 0 0 250px; /* Base de 250px para a imagem, sem crescer */
+/* Coluna do Texto */
+.about-me-text-column {
+    flex: 1; /* Ocupa 50% */
+    padding-right: 2rem;
 }
 
-.about-page-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 50%; /* Deixa a foto redonda, um toque moderno */
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1 );
-    border: 5px solid #fff;
+/* Coluna da Foto */
+.about-me-photo-column {
+    flex: 1; /* Ocupa 50% */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.about-page-text {
-    flex: 1; /* Ocupa o resto do espaço */
+/* Estilo do Nome (Fonte Serifada ) */
+.about-me-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #002366; /* Azul Escuro */
+    margin-bottom: 0.5rem;
 }
 
-.about-page-text h2 {
-    color: #002366;
-    font-size: 2.5em;
-    margin-top: 0;
-    margin-bottom: 5px;
+/* Estilo da Tagline */
+.about-me-tagline {
+    font-size: 1.2rem;
+    color: #6D2E46; /* Vinho */
+    margin-bottom: 2rem;
+    font-weight: 500;
 }
 
-.oab-number {
-    font-size: 0.9em;
-    color: #777;
-    margin-bottom: 25px;
-    font-style: italic;
+/* Linha decorativa sutil */
+.decorative-line {
+    height: 2px;
+    width: 80px;
+    background-color: #D4AF37; /* Dourado */
+    margin-bottom: 2rem;
 }
 
-.about-page-text p {
+/* Estilo do texto da biografia */
+.about-me-bio p {
+    font-size: 1rem;
     line-height: 1.8;
-    margin-bottom: 15px;
+    color: #333;
+    margin-bottom: 1.5rem;
 }
 
-.connect-section {
-    background-color: #f8f9fa;
-    padding: 50px 0;
-    text-align: center;
+/* Botão CTA da página */
+.about-me-cta {
+    margin-top: 1rem;
 }
 
-.connect-section h3 {
-    font-size: 1.8em;
-    color: #002366;
-    margin-bottom: 30px;
+/* Wrapper da Foto para o efeito de profundidade */
+.about-me-photo-wrapper {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1 / 1; /* Garante que seja um quadrado */
+    position: relative;
 }
+.about-me-photo-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: -20px;
+    bottom: -20px;
+    border: 2px solid #F4F1DE; /* Bege/Linho */
+    z-index: 1;
+}
+.about-me-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto preencha o espaço sem distorcer */
+    position: relative;
+    z-index: 2;
+    filter: grayscale(30%); /* Toque de sofisticação na cor */
+}
+
+/* Ícones de redes sociais */
+.about-me-social-icons {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+.about-me-social-icons a {
+    color: #333;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+.about-me-social-icons a:hover {
+    color: #D4AF37; /* Dourado */
+}
+
+/* --- AJUSTES PARA CELULAR (RESPONSIVIDADE) --- */
+@media (max-width: 768px) {
+    .about-me-split-layout {
+        flex-direction: column; /* Coloca a foto em cima do texto */
+    }
+    .about-me-photo-column {
+        order: -1; /* Joga a foto para o topo */
+        width: 100%;
+    }
+    .about-me-text-column {
+        padding-right: 0;
+        text-align: center;
+    }
+    .decorative-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about-me-name {
+        font-size: 2.5rem;
+    }
+}
+
 
 /* --- ESTILOS ADICIONAIS DA PÁGINA SOBRE --- */
 
