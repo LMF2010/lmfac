@@ -267,3 +267,127 @@ footer {
     transform: scale(1.1);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+
+/* --- ESTILOS DA PÁGINA SOBRE MIM --- */
+
+.about-page-content .container {
+    max-width: 900px; /* Container um pouco mais estreito para melhor leitura */
+}
+
+.about-flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+    align-items: flex-start; /* Alinha os itens no topo */
+    gap: 40px;
+}
+
+.about-page-image {
+    flex: 0 0 250px; /* Base de 250px para a imagem, sem crescer */
+}
+
+.about-page-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Deixa a foto redonda, um toque moderno */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1 );
+    border: 5px solid #fff;
+}
+
+.about-page-text {
+    flex: 1; /* Ocupa o resto do espaço */
+}
+
+.about-page-text h2 {
+    color: #002366;
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.oab-number {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.about-page-text p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.connect-section {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.connect-section h3 {
+    font-size: 1.8em;
+    color: #002366;
+    margin-bottom: 30px;
+}
+
+/* --- ESTILOS ADICIONAIS DA PÁGINA SOBRE --- */
+
+.professional-title {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.about-page-text h3 {
+    font-size: 1.6em;
+    color: #D4AF37; /* Dourado */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 4px solid #002366; /* Detalhe Azul */
+    padding-left: 10px;
+}
+
+/* Estilo para as listas */
+.checklist, .bullet-list {
+    list-style: none; /* Remove os marcadores padrão */
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.checklist li, .bullet-list li {
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+/* Ícones das listas */
+.checklist li .fa-check-circle {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    color: #28a745; /* Verde para o check */
+    font-size: 1.2em;
+}
+
+.bullet-list li::before {
+    content: '🔹'; /* Usando o emoji como marcador */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Estilo para a citação */
+.quote-wrapper {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+}
+
+blockquote {
+    border-left: 5px solid #D4AF37; /* Dourado */
+    padding-left: 30px;
+    font-size: 1.2em;
+    font-style: italic;
+    color: #555;
+    margin: 0;
+}
