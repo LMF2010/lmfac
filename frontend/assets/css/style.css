@@ -27,7 +27,7 @@ body {
 
 /* 1. O Banner com a Imagem de Fundo */
 .top-banner {
-    background-image: url('../assets/img/cabecalho.jpg');
+    background-image: url('../img/cabecalho.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
