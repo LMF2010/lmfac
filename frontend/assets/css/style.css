@@ -1,551 +1,519 @@
-/* --- RESET BÁSICO E CONFIGURAÇÕES GLOBAIS --- */
-body, h1, h2, h3, p, ul, li, a {
+:root {
+    --primary: #2c3e50;
+    --secondary: #e74c3c;
+    --accent: #3498db;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --border-radius: 8px;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --transition: all 0.3s ease;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #FFF;
+    color: var(--dark);
+    background-color: #fff;
+    overflow-x: hidden;
 }
 
-.container {
-    max-width: 1100px;
+/* Top Banner */
+.top-banner {
+    height: 5px;
+    background: linear-gradient(90deg, var(--secondary), var(--accent));
+}
+
+/* Header */
+header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+}
+
+.logo-text span {
+    color: var(--secondary);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-left: 25px;
+    position: relative;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 5px 0;
+    position: relative;
+    transition: var(--transition);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary);
+    transition: var(--transition);
+}
+
+nav a:hover::after, 
+nav a.active::after {
+    width: 100%;
+}
+
+nav a:hover, 
+nav a.active {
+    color: var(--primary);
+}
+
+/* Hero Banner */
+.hero-banner {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
+                url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    max-width: 600px;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--secondary);
+    color: white;
+    padding: 12px 30px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background: #c0392b;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    margin-left: 15px;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: var(--primary);
+}
+
+.btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Services Section */
+.services {
+    padding: 80px 0;
+    background: var(--light);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--primary);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.section-padding {
-    padding: 60px 0;
+.service-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
 }
 
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 
-/* --- NOVA ESTRUTURA DE CABEÇALHO E MENU --- */
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
 
-/* 1. O Banner com a Imagem de Fundo */
-.top-banner {
-    background-image: url('../img/cabecalho.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 150px; /* Altura do seu banner. Ajuste se necessário. */
+.service-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.service-description {
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+/* About Section */
+.about {
+    padding: 80px 0;
+    background: white;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-content {
+    padding-right: 30px;
+}
+
+.about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.about-text {
+    color: var(--gray);
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.about-image {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
     display: block;
 }
 
-/* 2. A Barra de Navegação (antigo header) */
-header {
-    background-color: #F4F1DE; /* Cor de fundo bege/linho da sua paleta */
-    padding: 15px 0;
-    border-bottom: 1px solid #e0dcd1;
-    text-align: center; /* Centraliza o menu */
-    position: sticky; /* Faz o menu grudar no topo ao rolar a página */
-    top: 0;
-    z-index: 1000;
+/* CTA Section */
+.cta {
+    background: linear-gradient(135deg, var(--primary), #1a2530);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
 }
 
-/* Esconde o link do logo que agora é desnecessário visualmente */
-header .logo-link {
-    display: none;
+.cta-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
 }
 
-header nav ul {
-    list-style: none;
-    display: inline-flex; /* Faz os itens ficarem na mesma linha */
-    justify-content: center;
-    gap: 40px; /* Espaçamento entre os itens do menu */
+.cta-text {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+    opacity: 0.9;
 }
 
-header nav a {
-    text-decoration: none;
-    color: #6D2E46; /* Cor Vinho para o texto, para bom contraste */
-    font-weight: 600; /* Deixa a fonte um pouco mais forte */
-    font-size: 1.1em;
-    padding: 10px 0;
-    transition: color 0.3s, border-bottom-color 0.3s;
-    border-bottom: 2px solid transparent; /* Borda inferior transparente para o efeito hover */
-}
-
-header nav a:hover {
-    color: #002366; /* Azul Escuro no hover */
-    border-bottom-color: #002366; /* Mostra a borda no hover */
-}
-
-
-
-/* --- RODAPÉ --- */
+/* Footer */
 footer {
-    background-color: #002366; /* Azul Escuro */
-    color: #FFF;
-    padding: 50px 0 20px 0;
+    background: var(--primary);
+    color: white;
+    padding: 60px 0 20px;
 }
 
-.footer-content {
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-logo-text span {
+    color: var(--secondary);
+}
+
+.footer-about {
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.footer-social {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.footer-content h3 {
-    color: #D4AF37; /* Dourado */
-    margin-bottom: 15px;
-}
-
-.footer-about, .footer-contact, .footer-social {
-    flex: 1;
-    min-width: 250px;
+    gap: 15px;
 }
 
 .footer-social a {
-    display: block;
-    color: #FFF;
-    text-decoration: none;
-    margin-bottom: 8px;
-    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: white;
+    transition: var(--transition);
 }
 
 .footer-social a:hover {
-    color: #D4A5A5; /* Rosa Chá */
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
+.footer-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--secondary);
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.footer-contact-item i {
+    margin-right: 10px;
+    color: var(--secondary);
 }
 
 .footer-bottom {
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 20px;
-    font-size: 0.9em;
+    padding: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #aaa;
 }
 
-.footer-bottom p {
-    margin-bottom: 5px;
-}
-
-/* --- ESTILOS DA PÁGINA INICIAL (HERO, CARDS, ETC) --- */
-/* (Estes já estavam no <style> da home, mas agora ficam aqui) */
-.hero-section {
-    background-color: #F4F1DE;
-    padding: 60px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-.hero-text { max-width: 600px; text-align: left; }
-.hero-text h1 { font-size: 2.8em; color: #002366; font-weight: bold; margin-bottom: 20px; line-height: 1.2; }
-.hero-text p { font-size: 1.2em; color: #333; margin-bottom: 30px; }
-.hero-image img { max-width: 350px; height: auto; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-.cta-button {
-    background-color: #D4AF37;
-    color: #FFF;
-    padding: 12px 25px; /* Menor preenchimento interno */
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1em; /* Fonte um pouco menor */
-    transition: all 0.3s ease;
-}
-.cta-button:hover {
-    background-color: #b89b31;
-    transform: translateY(-3px); /* Efeito de levantar sutilmente */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-.section-title { text-align: center; margin-bottom: 50px; font-size: 2.2em; color: #002366; }
-/* --- SEÇÃO DE SERVIÇOS REESTRUTURADA --- */
-
-.services-grid {
-    display: grid; /* Ativa o superpoder do CSS Grid */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* A MÁGICA: Cria colunas flexíveis. */
-    gap: 30px; /* O espaço entre os cards */
-}
-
-.service-card {
-    background-color: #FFF;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    text-align: left; /* Alinha o texto à esquerda para melhor leitura */
-    display: flex; /* Ativa o Flexbox DENTRO do card */
-    flex-direction: column; /* Organiza o conteúdo em coluna */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-10px); /* Efeito de elevação mais pronunciado */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.service-card h3 {
-    color: #002366; /* Azul escuro para o título */
-    margin-bottom: 15px;
-}
-
-.service-card p {
-    flex-grow: 1; /* FAZ O TEXTO OCUPAR O ESPAÇO DISPONÍVEL, empurrando o botão para baixo */
-    margin-bottom: 25px;
-}
-
-/* Estilo do novo botão "Saiba Mais" */
-.card-cta {
-    color: #D4AF37; /* Dourado */
-    text-decoration: none;
-    font-weight: bold;
-    align-self: flex-start; /* Alinha o botão à esquerda do card */
-    transition: color 0.3s ease;
-}
-
-.card-cta:hover {
-    color: #002366; /* Azul escuro no hover */
-}
-
-.about-section, .ebook-section { background-color: #F3F7F5; }
-
-.ebook-text {
-    max-width: 600px;
-    text-align: center; /* Centraliza o texto e o botão dentro dele */
-}
-
-.ebook-text p {
-    margin-bottom: 30px; /* CRIA O ESPAÇO VITAL entre o texto e o botão */
-}
-
-.ebook-image img {
-    max-width: 300px;
-    border-radius: 8px;
-}
-
-
-
-
-/* --- ESTILOS DAS PÁGINAS DE SERVIÇO --- */
-/* (Estes estavam no <style> das páginas de serviço, agora ficam aqui) */
-.page-header { background-color: #002366; color: #FFF; padding: 50px 20px; text-align: center; }
-.page-header h1 { font-size: 2.8em; margin: 0; margin-bottom: 10px; }
-.page-header p { font-size: 1.2em; opacity: 0.9; max-width: 800px; margin: 0 auto; }
-.content-section { max-width: 800px; margin: 0 auto; }
-.content-section h2 { color: #D4AF37; font-size: 1.8em; border-bottom: 2px solid #F3F7F5; padding-bottom: 10px; margin-top: 40px; }
-.content-section ul { list-style-type: disc; padding-left: 20px; line-height: 1.6; }
-.cta-section { background-color: #F4F1DE; text-align: center; margin-top: 40px; }
-
-/* Estilos para o índice de serviços */
-.service-index-card { background-color: #FFF; border: 1px solid #eee; border-radius: 8px; margin-bottom: 30px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.07); text-align: left; transition: transform 0.3s, box-shadow 0.3s; }
-.service-index-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-.service-index-card h2 { color: #D4AF37; font-size: 1.8em; margin-top: 0; margin-bottom: 15px; }
-.service-index-card p { line-height: 1.7; margin-bottom: 25px; }
-.cta-button-secondary { background-color: #002366; color: #FFF; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s; }
-.cta-button-secondary:hover { background-color: #00338D; }
-
-/* Estilo dos Ícones de Contato */
-.contact-icons {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #fff; /* Ou a cor de fundo que preferir */
-}
-
-.icon-link {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    color: #333;
-    font-size: 24px;
-    line-height: 50px;
-    text-align: center;
-    margin: 0 10px;
-    transition: all 0.3s ease-in-out;
-}
-
-.icon-link:hover {
-    background-color: #333;
-    color: #fff;
-    transform: scale(1.1);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/*
-==============================================
---- ESTILOS EXCLUSIVOS PÁGINA "SOBRE MIM" ---
-==============================================
-*/
-
-/* Define as fontes para a página */
-.about-me-main-container {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #fff;
-    padding: 4rem 2rem; /* Espaçamento generoso */
-}
-
-/* O layout dividido 50/50 */
-.about-me-split-layout {
-    display: flex;
-    max-width: 1200px;
-    margin: auto;
-    align-items: center;
-    gap: 3rem;
-}
-
-/* Coluna do Texto */
-.about-me-text-column {
-    flex: 1; /* Ocupa 50% */
-    padding-right: 2rem;
-}
-
-/* Coluna da Foto */
-.about-me-photo-column {
-    flex: 1; /* Ocupa 50% */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Estilo do Nome (Fonte Serifada ) */
-.about-me-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    color: #002366; /* Azul Escuro */
-    margin-bottom: 0.5rem;
-}
-
-/* Estilo da Tagline */
-.about-me-tagline {
-    font-size: 1.2rem;
-    color: #6D2E46; /* Vinho */
-    margin-bottom: 2rem;
-    font-weight: 500;
-}
-
-/* Linha decorativa sutil */
-.decorative-line {
-    height: 2px;
-    width: 80px;
-    background-color: #D4AF37; /* Dourado */
-    margin-bottom: 2rem;
-}
-
-/* Estilo do texto da biografia */
-.about-me-bio p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #333;
-    margin-bottom: 1.5rem;
-}
-
-/* Botão CTA da página */
-.about-me-cta {
-    margin-top: 1rem;
-}
-
-/* Wrapper da Foto para o efeito de profundidade */
-.about-me-photo-wrapper {
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 1 / 1; /* Garante que seja um quadrado */
-    position: relative;
-}
-.about-me-photo-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: -20px;
-    bottom: -20px;
-    border: 2px solid #F4F1DE; /* Bege/Linho */
-    z-index: 1;
-}
-.about-me-photo-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que a foto preencha o espaço sem distorcer */
-    position: relative;
-    z-index: 2;
-    filter: grayscale(30%); /* Toque de sofisticação na cor */
-}
-
-/* Ícones de redes sociais */
-.about-me-social-icons {
-    margin-top: 2.5rem;
-    display: flex;
-    gap: 1.5rem;
-}
-.about-me-social-icons a {
-    color: #333;
-    font-size: 1.5rem;
-    transition: color 0.3s ease;
-}
-.about-me-social-icons a:hover {
-    color: #D4AF37; /* Dourado */
-}
-
-/* --- AJUSTES PARA CELULAR (RESPONSIVIDADE) --- */
-@media (max-width: 768px) {
-    .about-me-split-layout {
-        flex-direction: column; /* Coloca a foto em cima do texto */
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.4rem;
     }
-    .about-me-photo-column {
-        order: -1; /* Joga a foto para o topo */
-        width: 100%;
+    
+    .about-container {
+        grid-template-columns: 1fr;
     }
-    .about-me-text-column {
+    
+    .about-content {
         padding-right: 0;
+        order: 2;
         text-align: center;
     }
-    .decorative-line {
-        margin-left: auto;
-        margin-right: auto;
+    
+    .about-image {
+        order: 1;
+        max-width: 500px;
+        margin: 0 auto;
     }
-    .about-me-name {
-        font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+    
+    .logo {
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav li {
+        margin: 0 10px 10px;
+    }
+    
+    .hero-banner {
+        height: 400px;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        margin: 0 auto 15px;
+    }
+    
+    .hero-subtitle {
+        margin: 0 auto 20px;
+    }
+    
+    .btn-container {
+        justify-content: center;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
     }
 }
 
-
-/* --- ESTILOS ADICIONAIS DA PÁGINA SOBRE --- */
-
-.professional-title {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 30px;
-    font-weight: 500;
-}
-
-.about-page-text h3 {
-    font-size: 1.6em;
-    color: #D4AF37; /* Dourado */
-    margin-top: 30px;
-    margin-bottom: 15px;
-    border-left: 4px solid #002366; /* Detalhe Azul */
-    padding-left: 10px;
-}
-
-/* Estilo para as listas */
-.checklist, .bullet-list {
-    list-style: none; /* Remove os marcadores padrão */
-    padding-left: 0;
-    margin-bottom: 25px;
-}
-
-.checklist li, .bullet-list li {
-    padding-left: 30px;
-    position: relative;
-    margin-bottom: 10px;
-    line-height: 1.7;
-}
-
-/* Ícones das listas */
-.checklist li .fa-check-circle {
-    position: absolute;
-    left: 0;
-    top: 5px;
-    color: #28a745; /* Verde para o check */
-    font-size: 1.2em;
-}
-
-.bullet-list li::before {
-    content: '🔹'; /* Usando o emoji como marcador */
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-/* Estilo para a citação */
-.quote-wrapper {
-    margin-top: 50px;
-    padding-top: 40px;
-    border-top: 1px solid #eee;
-}
-
-blockquote {
-    border-left: 5px solid #D4AF37; /* Dourado */
-    padding-left: 30px;
-    font-size: 1.2em;
-    font-style: italic;
-    color: #555;
-    margin: 0;
-}
-
-
-/*
-==============================================
---- ESTILOS PARA A PÁGINA DO BLOG ---
-==============================================
-*/
-
-/* Layout da Grade do Blog */
-.blog-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Uma coluna por padrão (para mobile) */
-    gap: 40px; /* Espaçamento entre os cards */
-    padding: 40px 0;
-}
-
-/* Estilo de cada Card de Post */
-.blog-card {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Título do Card */
-.blog-card__title {
-    font-family: 'Playfair Display', serif; /* Fonte mais elegante para títulos */
-    font-size: 1.8em;
-    color: #002366; /* Azul Escuro */
-    margin-bottom: 10px;
-    line-height: 1.3;
-}
-
-/* Meta informações (Autor, Data) */
-.blog-card__meta {
-    font-size: 0.9em;
-    color: #777;
-    margin-bottom: 15px;
-}
-
-/* Descrição/Resumo do Post */
-.blog-card__description {
-    flex-grow: 1; /* Empurra o link "Leia mais" para baixo */
-    margin-bottom: 20px;
-    line-height: 1.7;
-}
-
-/* Link "Leia mais" */
-.blog-card__link {
-    color: #D4AF37; /* Dourado */
-    text-decoration: none;
-    font-weight: bold;
-    align-self: flex-start; /* Alinha à esquerda */
-}
-
-.blog-card__link i {
-    margin-left: 5px;
-    transition: transform 0.3s ease;
-}
-
-.blog-card__link:hover i {
-    transform: translateX(5px);
-}
-
-/* Ajuste para telas maiores (tablets e desktops) */
-@media (min-width: 768px) {
-    .blog-grid {
-        /* Duas colunas para telas maiores */
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn-outline {
+        margin-left: 0;
+        margin-top: 10px;
     }
 }

@@ -3,206 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LMFAC - Advocacia Especializada em Recuperação Tributária</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>LMFAC Advocacia e Consultoria | Protegendo Negócios, Descomplicando o Jurídico</title>
+    <meta name="description" content="Consultoria jurídica especializada em recuperação fiscal, defesa em execuções fiscais e crimes econômicos para empresas do SIMPLES Nacional.">
+    <meta name="keywords" content="advocacia empresarial, consultoria tributária, recuperação fiscal, direito tributário, defesa fiscal, crimes econômicos, SIMPLES Nacional">
+    <meta name="author" content="LMF Advocacia e Consultoria">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lmfac.com.br">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lmfac.com.br">
+    <meta property="og:title" content="LMF Advocacia  Consultoria Jurídica Especializada">
+    <meta property="og:description" content="Protegendo negócios e descomplicando o jurídico com soluções personalizadas em direito tributário e empresarial.">
+    <meta property="og:image" content="https://lmfac.com.br/assets/images/og-image-home.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="LMF Advocacia e Consultoria">
 
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lmfac.com.br">
+    <meta property="twitter:title" content="LMFAC Advocacia | Consultoria Jurídica Especializada">
+    <meta property="twitter:description" content="Protegendo negócios e descomplicando o jurídico com soluções personalizadas em direito tributário e empresarial.">
+    <meta property="twitter:image" content="https://lmfac.com.br/assets/images/twitter-card-home.jpg">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS local CORRIGIDO -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Adicionando um estilo extra no cabeçalho para customizações da página inicial -->
-    <style>
-        .hero-section {
-            background-color: #F4F1DE; /* Bege da paleta */
-            padding: 60px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        .hero-text {
-            max-width: 600px;
-            text-align: left;
-        }
-        .hero-text h1 {
-            font-size: 2.8em;
-            color: #002366; /* Azul Escuro */
-            font-weight: bold;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        .hero-text p {
-            font-size: 1.2em;
-            color: #333;
-            margin-bottom: 30px;
-        }
-        .hero-image img {
-            max-width: 350px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .cta-button {
-            background-color: #D4AF37; /* Dourado */
-            color: #FFF;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: background-color 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #b89b31; /* Dourado mais escuro */
-        }
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.2em;
-            color: #002366;
-        }
-        .services-grid, .about-content, .ebook-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-        .service-card {
-            background-color: #FFF;
-            border: 1px solid #eee;
-            border-left: 5px solid #D4AF37; /* Dourado */
-            padding: 30px;
-            border-radius: 8px;
-            width: 280px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .about-section, .ebook-section {
-            background-color: #F3F7F5; /* Verde claro */
-        }
-        .about-text, .ebook-text {
-            max-width: 600px;
-        }
-        .ebook-image img {
-            max-width: 300px;
-            border-radius: 8px;
-        }
-    </style>
+    
+    <!-- Script de emergência para garantir que o CSS carregue -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Força recarregamento do CSS se não estiver aplicado
+        setTimeout(function() {
+            if (!document.querySelector('.hero-banner')) return;
+            
+            const computedStyle = window.getComputedStyle(document.querySelector('.hero-banner'));
+            if (computedStyle.backgroundColor === 'rgba(0, 0, 0, 0)') {
+                console.log('CSS não carregado! Recarregando...');
+                const links = document.querySelectorAll('link[rel="stylesheet"]');
+                links.forEach(link => {
+                    const href = link.href.split('?')[0];
+                    link.href = href + '?t=' + new Date().getTime();
+                });
+            }
+        }, 1000);
+    });
+    </script>
 </head>
 <body>
-
-    <!-- Nova seção apenas para a imagem do banner -->
-    <div class="top-banner">
-        <!-- Este div está vazio de propósito. A imagem será colocada via CSS. -->
-    </div>
-
-    <!-- O header agora conterá apenas o menu de navegação -->
+    <!-- Top Banner -->
+    <div class="top-banner"></div>
+    
+    <!-- Header -->
     <header>
-        <div class="container">
-            <a href="index.html" class="logo-link"></a> <!-- Link invisível para a home, para SEO -->
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-text">LMF <span>Advocacia & Consultoria</span></div>
+            </div>
+            
             <nav>
                 <ul>
-    <li><a href="index.html">Início</a></li>
-    <li><a href="como-funciona.html">Como Funciona</a></li>
-    <li><a href="index.html#servicos">Serviços</a></li>
-    <li><a href="ebook.html">Ebook</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="index.html#contato">Contato</a></li>
-</ul>
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="comofunciona.html">Como Funciona</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="ebook.html">Ebook</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
             </nav>
         </div>
     </header>
-
-
-    <main>
-        <!-- SEÇÃO PRINCIPAL (HERO) -->
-        <section class="hero-section">
-            <div class="hero-text">
-                <h1>Advocacia Especializada em Recuperação Tributária</h1>
-                <p>Sua empresa pode ter dinheiro a receber em impostos pagos indevidamente nos últimos 5 anos. Realizamos um diagnóstico completo, sem custos iniciais.</p>
-                <a href="#contato" class="cta-button">Quero meu Diagnóstico Gratuito</a>
-            </div>
-            <div class="hero-image">
-                <img src="assets/img/laura-franca-advogada.jpg" alt="Dra. Laura de Moura França">
-            </div>
-        </section>
-
-       <!-- SEÇÃO DE SERVIÇOS -->
-<section class="services-section section-padding">
-    <div class="container">
-        <h2 class="section-title">Nossas Áreas de Atuação</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Recuperação Tributária</h3>
-                <p>Identificamos e recuperamos créditos fiscais para otimizar o fluxo de caixa da sua empresa.</p>
-                <a href="#" class="card-cta">Saiba Mais &rarr;</a>
-            </div>
-            <div class="service-card">
-                <h3>Consultoria Jurídica</h3>
-                <p>Orientação estratégica para garantir a conformidade fiscal e prevenir litígios.</p>
-                <a href="#" class="card-cta">Saiba Mais &rarr;</a>
-            </div>
-            <div class="service-card">
-                <h3>Defesa em Execuções Fiscais</h3>
-                <p>Atuação especializada na defesa de empresas em processos de execução fiscal.</p>
-                <a href="#" class="card-cta">Saiba Mais &rarr;</a>
-            </div>
-            <div class="service-card">
-                <h3>Crimes Econômicos</h3>
-                <p>Defesa técnica e especializada em casos complexos envolvendo crimes contra a ordem tributária.</p>
-                <a href="#" class="card-cta">Saiba Mais &rarr;</a>
+    
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1 class="hero-title">Protegendo negócios, descomplicando o jurídico</h1>
+            <p class="hero-subtitle">Consultoria jurídica especializada em recuperação fiscal, defesa em execuções fiscais e crimes econômicos para empresas do SIMPLES Nacional.</p>
+            
+            <div class="btn-container">
+                <a href="#servicos" class="btn">Nossos Serviços</a>
+                <a href="#contato" class="btn btn-outline">Fale Conosco</a>
+                <a href="https://wa.me/558234366497?text=Olá, gostaria de agendar uma consultoria" 
+                   class="btn" 
+                   target="_blank">
+                   <i class="fab fa-whatsapp"></i> Agendar Consultoria
+                </a>
             </div>
         </div>
-    </div>
-</section>
-
-
-        <!-- SEÇÃO SOBRE MIM -->
-        <section class="about-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Expertise e Confiança</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>LMF Advocacia e Consultoria</h3>
-                        <p>Liderado pela Dra. Laura de Moura França, nosso escritório une conhecimento técnico aprofundado e uma abordagem estratégica para transformar desafios tributários em oportunidades para sua empresa. Cada caso é tratado com a máxima dedicação, buscando não apenas a solução de problemas, mas a construção de um futuro financeiro mais sólido e seguro para nossos clientes.</p>
-                        <p>Com uma atuação pautada pela ética, transparência e excelência, a LMFAC é sua parceira estratégica para navegar com segurança no complexo sistema tributário brasileiro.</p>
-                    </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services" id="servicos">
+        <h2 class="section-title">Nossos Serviços Especializados</h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-search-dollar"></i>
+                </div>
+                <h3 class="service-title">Recuperação Fiscal</h3>
+                <p class="service-description">Identificamos e recuperamos valores pagos indevidamente ao Fisco nos últimos 5 anos, especialmente PIS/COFINS sobre produtos monofásicos.</p>
+                <a href="comofunciona.html" class="btn">Saiba Mais</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <h3 class="service-title">Defesa em Execuções Fiscais</h3>
+                <p class="service-description">Atuação estratégica para anular ou reduzir débitos fiscais, com defesa administrativa e judicial especializada.</p>
+                <a href="comofunciona.html" class="btn">Saiba Mais</a>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <h3 class="service-title">Crimes Econômicos</h3>
+                <p class="service-description">Defesa especializada em crimes contra a ordem tributária, econômica e relações de consumo, com estratégias personalizadas.</p>
+                <a href="comofunciona.html" class="btn">Saiba Mais</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2 class="about-title">Sobre a LMFAC</h2>
+                <p class="about-text">Com mais de 10 anos de experiência em Direito Tributário e Empresarial, a LMFAC Advocacia e Consultoria se destaca pela abordagem prática e personalizada, transformando desafios jurídicos em oportunidades de crescimento para seus clientes.</p>
+                <p class="about-text">Nossa missão é descomplicar o jurídico para empresários, oferecendo soluções inteligentes e eficientes que protejam seus negócios e otimizem seus resultados.</p>
+                <a href="sobre.html" class="btn">Conheça Nossa História</a>
+            </div>
+            
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Advocacia empresarial">
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta" id="contato">
+        <h2 class="cta-title">Pronto para Transformar Seus Desafios Jurídicos em Oportunidades?</h2>
+        <p class="cta-text">Agende uma consultoria personalizada e descubra como podemos proteger e impulsionar seu negócio.</p>
+        <a href="https://wa.me/558234366497?text=Olá, gostaria de agendar uma consultoria" 
+           class="btn" 
+           target="_blank">
+           <i class="fab fa-whatsapp"></i> Agendar Consultoria
+        </a>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <div class="footer-logo-text">LMFAC <span>Advocacia</span></div>
+                </div>
+                <p class="footer-about">Especializada em direito tributário e empresarial, oferecemos soluções jurídicas inteligentes para proteger e impulsionar seu negócio.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
-        </section>
-
-        <!-- SEÇÃO EBOOK -->
-        <section class="ebook-section section-padding">
-            <div class="container">
-                <h2 class="section-title">Conhecimento que Transforma</h2>
-                <div class="ebook-content">
-                    <div class="ebook-text">
-                        <h3>Nosso Ebook Exclusivo</h3>
-                        <p>Aprofunde seus conhecimentos com nosso material exclusivo, um guia prático e completo sobre os segredos da gestão tributária e recuperação de créditos. Um infoproduto desenvolvido para capacitar empresários e gestores a tomarem as melhores decisões.</p>
-                        <a href="ebook.html" class="cta-button">Saiba Mais e Adquira o Seu</a>
-                    </div>
-                    <!-- Você pode adicionar uma imagem da capa do ebook aqui quando tiver -->
-                    <!-- <div class="ebook-image">
-                        <img src="assets/img/capa-ebook.png" alt="Capa do Ebook">
-                    </div> -->
-                </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-title">Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="comofunciona.html">Como Funciona</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="ebook.html">Ebook</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                </ul>
             </div>
-        </section>
-    </main>
-
-    <footer id="contato">
-        <section class="contact-icons" id="contato">
-    <a href="https://wa.me/558234366497" target="_blank" class="icon-link" id="icone-whatsapp" aria-label="Link para o WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://instagram.com/lmf.ac_adv.trib" target="_blank" class="icon-link" id="icone-instagram" aria-label="Link para o Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="mailto:lmfadvocacia@yahoo.com" class="icon-link" id="icone-email" aria-label="Link para enviar E-mail"><i class="fas fa-envelope"></i></a>
-</section>
-
+            
+            <div class="footer-col">
+                <h3 class="footer-title">Áreas de Atuação</h3>
+                <ul class="footer-links">
+                    <li><a href="servico-recuperacao-fiscal.html">Recuperação Tributária</a></li>
+                    <li><a href="servico-defesa-execucoes.html">Defesa Fiscal</a></li>
+                    <li><a href="servico-crimes-economicos.html">Crimes Econômicos</a></li>
+                    <li><a href="servico-consultoria-juridica.html">Consultoria Jurídica</a></li>
+                    <li><a href="servicos.html">Planejamento Tributário</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-title">Contato</h3>
+                <ul class="footer-links">
+                    <li class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Maceió, AL</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+55 (82) 3436-6497</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contato@lmfac.com.br</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="far fa-clock"></i>
+                        <span>Seg-Sex: 9h às 18h</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 LMFAC - Moura França Advocacia e Consultoria. Todos os direitos reservados.</p>
+            <p>CNPJ: 00.000.000/0000-00 | OAB/PE 31.768</p>
+        </div>
     </footer>
-
-<script src="assets/js/main.js"></script>
-<script src="assets/js/agendamento_novo.js"></script>
-<script src="assets/js/chatbot.js"></script>
-
+    
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
 </body>
 </html>
-
-

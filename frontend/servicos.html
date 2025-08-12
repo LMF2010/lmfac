@@ -3,26 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços - LMFAC Advocacia</title>
+    <title>Serviços - LMF Advocacia & Consultoria</title>
+    <meta name="description" content="Soluções especializadas em direito tributário: recuperação fiscal, planejamento tributário, defesa em execuções fiscais e crimes econômicos">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+        }
+        
+        /* Top Banner */
+        .top-banner {
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 5px 0;
+            position: relative;
+            transition: var(--transition);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
+                        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 60px;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+        
+        /* Services Section */
+        .services-details-section {
+            padding: 0 20px 80px;
+        }
+        
+        .service-index-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .service-index-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-index-card h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .service-index-card p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .cta-button-secondary {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .cta-button-secondary:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-about h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-about p {
+            opacity: 0.8;
+            line-height: 1.7;
+        }
+        
+        .footer-contact h3, .footer-social h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-contact h3::after, .footer-social h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .footer-contact p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .footer-social a {
+            display: block;
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: var(--transition);
+        }
+        
+        .footer-social a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 0 10px 10px;
+            }
+            
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .service-index-card {
+                padding: 30px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-       <!-- Nova seção apenas para a imagem do banner -->
-    <div class="top-banner">
-        <!-- Este div está vazio de propósito. A imagem será colocada via CSS. -->
-    </div>
-
-    <!-- O header agora conterá apenas o menu de navegação -->
+    <!-- Top Banner -->
+    <div class="top-banner"></div>
+    
+    <!-- Header -->
     <header>
-        <div class="container">
-            <a href="index.html" class="logo-link"></a> <!-- Link invisível para a home, para SEO -->
+        <div class="container header-container">
+            <a href="index.html" class="logo-text">LMF <span>Advocacia & Consultoria</span></a>
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="servicos.html" class="active">Serviços</a></li>
                     <li><a href="ebook.html">Ebook</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="#contato">Contato</a></li>
@@ -31,79 +300,107 @@
         </div>
     </header>
 
-
     <main>
+        <!-- Page Header -->
         <section class="page-header">
-            <h1>Nossos Serviços</h1>
+            <div class="container">
+                <h1>Nossos Serviços Especializados</h1>
+                <p>Soluções jurídicas inteligentes para proteger e impulsionar seu negócio</p>
+            </div>
         </section>
 
-        <section class="services-details-section section-padding">
+        <!-- Services Details -->
+        <section class="services-details-section">
             <div class="container">
-
-                <!-- Card para Recuperação Fiscal -->
+                <!-- Recuperação Fiscal -->
                 <div class="service-index-card">
-                    <h2>Recuperação Fiscal de Produtos Monofásicos</h2>
-                    <p>Identificamos e recuperamos PIS e COFINS pagos indevidamente por empresas do SIMPLES Nacional, injetando dinheiro de volta no seu caixa de forma rápida e segura.</p>
+                    <h2><i class="fas fa-search-dollar" style="color: var(--secondary); margin-right: 15px;"></i> Recuperação Fiscal de Produtos Monofásicos</h2>
+                    <p>Identificamos e recuperamos PIS e COFINS pagos indevidamente por empresas do SIMPLES Nacional, injetando dinheiro de volta no seu caixa de forma rápida e segura. Nossa equipe especializada analisa os últimos 5 anos de movimentação financeira para identificar créditos tributários disponíveis.</p>
                     <a href="servico-recuperacao-fiscal.html" class="cta-button-secondary">Saiba Mais</a>
                 </div>
 
-                <!-- Card para Consultoria -->
+                <!-- Consultoria -->
                 <div class="service-index-card">
-                    <h2>Consultoria e Planejamento Tributário</h2>
-                    <p>Orientação estratégica para garantir a conformidade fiscal, reduzir legalmente a carga de impostos e prevenir litígios e autuações.</p>
+                    <h2><i class="fas fa-chart-line" style="color: var(--secondary); margin-right: 15px;"></i> Consultoria e Planejamento Tributário</h2>
+                    <p>Orientação estratégica para garantir a conformidade fiscal, reduzir legalmente a carga de impostos e prevenir litígios e autuações. Desenvolvemos planos personalizados considerando as particularidades do seu negócio e as melhores oportunidades do mercado.</p>
                     <a href="servico-consultoria-juridica.html" class="cta-button-secondary">Saiba Mais</a>
                 </div>
 
-                <!-- Card para Defesa em Execuções -->
+                <!-- Defesa em Execuções -->
                 <div class="service-index-card">
-                    <h2>Defesa em Execuções Fiscais</h2>
-                    <p>Atuação especializada na defesa de empresas em processos de execução fiscal para proteger seu patrimônio e buscar a melhor solução para o débito.</p>
+                    <h2><i class="fas fa-gavel" style="color: var(--secondary); margin-right: 15px;"></i> Defesa em Execuções Fiscais</h2>
+                    <p>Atuação especializada na defesa de empresas em processos de execução fiscal para proteger seu patrimônio e buscar a melhor solução para o débito. Nossa abordagem combina conhecimento técnico profundo com estratégias inovadoras de negociação.</p>
                     <a href="servico-defesa-execucoes.html" class="cta-button-secondary">Saiba Mais</a>
                 </div>
                 
-                <!-- Card para Crimes Econômicos (AGORA ATIVO) -->
+                <!-- Crimes Econômicos -->
                 <div class="service-index-card">
-                    <h2>Defesa em Crimes Contra a Ordem Tributária</h2>
-                    <p>Defesa técnica e especializada em casos complexos envolvendo crimes contra a ordem tributária, protegendo sua liberdade e seus direitos.</p>
+                    <h2><i class="fas fa-balance-scale" style="color: var(--secondary); margin-right: 15px;"></i> Defesa em Crimes Contra a Ordem Tributária</h2>
+                    <p>Defesa técnica e especializada em casos complexos envolvendo crimes contra a ordem tributária, protegendo sua liberdade e seus direitos. Atuamos preventivamente para evitar que situações administrativas evoluam para esfera criminal.</p>
                     <a href="servico-crimes-economicos.html" class="cta-button-secondary">Saiba Mais</a>
                 </div>
-
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer id="contato">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
                     <h3>LMFAC Advocacia & Consultoria</h3>
-                    <p>Soluções inteligentes em direito tributário para sua empresa.</p>
+                    <p>Soluções inteligentes em direito tributário para sua empresa. Combinamos expertise jurídica com abordagem estratégica para proteger seu negócio.</p>
                 </div>
                 <div class="footer-contact">
                     <h3>Contato</h3>
-                    <p>Telefone/WhatsApp: (82) 3436-6497</p>
-                    <p>E-mail: lmfpro@yahoo.com</p>
+                    <p><i class="fas fa-phone"></i> (82) 3436-6497</p>
+                    <p><i class="fas fa-envelope"></i> lmfpro@yahoo.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Maceió, AL</p>
                 </div>
                 <div class="footer-social">
                     <h3>Redes Sociais</h3>
-                    <a href="https://www.instagram.com/laurafranca.adv/" target="_blank">Instagram Pessoal</a>
-                    <a href="https://www.instagram.com/lmf.ac_adv.trib/" target="_blank">Instagram Escritório</a>
-                    <a href="https://www.linkedin.com/in/lmfac" target="_blank">LinkedIn Pessoal</a>
-                    <a href="https://www.linkedin.com/company/lmf-advocacia-e-consultoria" target="_blank">LinkedIn Escritório</a>
+                    <a href="https://www.instagram.com/laurafranca.adv/" target="_blank"><i class="fab fa-instagram"></i> Instagram Pessoal</a>
+                    <a href="https://www.instagram.com/lmf.ac_adv.trib/" target="_blank"><i class="fab fa-instagram"></i> Instagram Escritório</a>
+                    <a href="https://www.linkedin.com/in/lmfac" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Pessoal</a>
+                    <a href="https://www.linkedin.com/company/lmf-advocacia-e-consultoria" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Escritório</a>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 LMFAC Advocacia. Todos os direitos reservados.</p>
-                <p style="font-size: 0.8em; opacity: 0.7;">Laura de Moura França - OAB/PE 31.768</p>
+                <p>Laura de Moura França - OAB/PE 31.768</p>
             </div>
         </div>
     </footer>
 
-<script src="assets/js/main.js"></script>
-<script src="assets/js/agendamento_novo.js"></script>
-<script src="assets/js/chatbot.js"></script>
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/558234366497" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+    </style>
 </body>
 </html>
-
-

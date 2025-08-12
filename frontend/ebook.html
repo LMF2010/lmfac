@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-book: O Lucro Invisível | LMF Advocacia e Consultoria</title>
+    
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="E-book 'O Lucro Invisível': Como Pequenas e Médias Empresas Recuperam Milhares e Blindam o Caixa Contra o Fisco. Por R$ 97,00.">
+    
+    <!-- Fontes otimizadas -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ESTILOS OTIMIZADOS PARA PERFORMANCE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        
+        .ebook-page {
+            padding: 15px 0;
+        }
+        
+        .ebook-hero {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .ebook-hero__content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .ebook-hero__text, 
+        .ebook-hero__image {
+            flex: 1;
+            min-width: 280px;
+        }
+        
+        .ebook-hero__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.0rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
+        }
+        
+        .ebook-hero__subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        
+        .benefit-item::before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .price-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 18px 0;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+        
+        .price-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e74c3c;
+            display: block;
+            margin: 5px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .btn--primary {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            width: 100%;
+            max-width: 320px;
+            font-size: 1rem;
+        }
+        
+        .ebook-cover {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+        
+        .ebook-cover__image {
+            width: 100%;
+            display: block;
+        }
+        
+        .ebook-content, 
+        .ebook-bonus, 
+        .ebook-author, 
+        .ebook-faq {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #2c3e50;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .ebook-chapters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        
+        .chapter-item {
+            background: white;
+            border-radius: 8px;
+            padding: 18px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .chapter-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .author-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .author-image, 
+        .author-text {
+            flex: 1;
+            min-width: 280px;
+        }
+        
+        .author-photo {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #e9ecef;
+        }
+        
+        .ebook-final-cta {
+            text-align: center;
+            padding: 30px 15px;
+            background: #2c3e50;
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .urgency-box {
+            display: inline-block;
+            background: #e74c3c;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin: 15px 0;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            margin-top: 12px;
+        }
+        
+        .footer {
+            padding: 20px 0;
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            display: none;
+            padding-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .ebook-hero {
+                padding: 15px;
+            }
+            
+            .ebook-hero__title {
+                font-size: 1.7rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .author-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul style="display: flex; justify-content: center; gap: 15px; list-style: none; padding: 10px 0;">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#servicos">Serviços</a></li>
+                    <li><a href="ebook.html">Ebook</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="ebook-page">
+        <section class="ebook-hero">
+            <div class="container">
+                <div class="ebook-hero__content">
+                    <div class="ebook-hero__text">
+                        <h1 class="ebook-hero__title">O Lucro Invisível</h1>
+                        <p class="ebook-hero__subtitle">Como pequenas e médias empresas resgatam milhares em impostos e blindam o caixa contra o Fisco</p>
+                        
+                        <div class="ebook-hero__benefits">
+                            <div class="benefit-item">
+                                <span>Checklist "Check-up Fiscal de 5 Minutos"</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span>Planilha "Caça aos NCMs Errados"</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span>Como Conversar com o Seu Contador</span>
+                            </div>
+                            <div class="benefit-item">
+                                <span>7 Anexos com ferramentas práticas</span>
+                            </div>
+                        </div>
+
+                        <div class="ebook-hero__cta">
+                            <div class="price-box">
+                                <span class="price-label">Investimento:</span>
+                                <span class="price-value">R$ 97,00</span>
+                                <span class="price-installment">ou 3x de R$ 32,33</span>
+                            </div>
+                            <a href="SEU_LINK_DA_HOTMART_AQUI" class="btn btn--primary" target="_blank">
+                                Quero Adquirir Agora
+                            </a>
+                            <p style="margin-top: 10px; font-size: 0.9rem;">
+                                Compra 100% segura • Garantia de 7 dias
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="ebook-hero__image">
+                        <div class="ebook-cover">
+                            <img src="assets/img/ebook-cover-mockup.jpg" 
+                                 alt="Capa do E-book O Lucro Invisível" 
+                                 class="ebook-cover__image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ebook-content">
+            <div class="container">
+                <h2 class="section-title">O que você vai aprender</h2>
+                
+                <div class="ebook-chapters">
+                    <div class="chapter-item">
+                        <div class="chapter-number">01</div>
+                        <h3>A mina de ouro esquecida</h3>
+                        <p>Como identificar impostos pagos a mais que podem ser recuperados</p>
+                    </div>
+                    
+                    <div class="chapter-item">
+                        <div class="chapter-number">02</div>
+                        <h3>O erro que custa milhões</h3>
+                        <p>Classificação fiscal de mercadorias: como corrigir e recuperar</p>
+                    </div>
+                    
+                    <div class="chapter-item">
+                        <div class="chapter-number">03</div>
+                        <h3>O passo a passo da restituição</h3>
+                        <p>Processo administrativo simplificado para reaver seu dinheiro</p>
+                    </div>
+                    
+                    <div class="chapter-item">
+                        <div class="chapter-number">04</div>
+                        <h3>Blindagem fiscal preventiva</h3>
+                        <p>Estratégias para evitar pagar impostos indevidos no futuro</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ebook-bonus">
+            <div class="container">
+                <h2 class="section-title">Bônus Exclusivos</h2>
+                
+                <div class="ebook-chapters">
+                    <div class="chapter-item">
+                        <h3>Checklist "Check-up Fiscal de 5 Minutos"</h3>
+                        <p>Identifique rapidamente se sua empresa está pagando impostos a mais</p>
+                    </div>
+                    
+                    <div class="chapter-item">
+                        <h3>Planilha "Caça aos NCMs Errados"</h3>
+                        <p>Ferramenta prática para corrigir classificação de produtos</p>
+                    </div>
+                    
+                    <div class="chapter-item">
+                        <h3>Como Conversar com o Contador?</h3>
+                        <p>Essencial para manter a Parceria Confiável de Anos</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ebook-author">
+            <div class="container">
+                <div class="author-content">
+                    <div class="author-image">
+                        <img src="assets/img/teste-landing-4.jpg" 
+                             alt="Dra. Laura de M. França" 
+                             class="author-photo">
+                    </div>
+                    <div class="author-text">
+                        <h2>Sobre a Autora</h2>
+                        <h3>Laura Moura França</h3>
+                        <p class="author-title">Advogada Especializada em Recuperação Fiscal e Defesa Tributária</p>
+                        
+                        <p>Com mais de 12 anos de experiência em Direito, Laura já ajudou diversos segmentos empresariais recuperando impostos pagos indevidamente por pequenas e médias empresas.</p>
+                        <p>Formada pelo Centro de Ensino Superior de Maceió - CESMAC, pós-graduada em Recuperação Tributária pela Save Academy e especialista em Recuperação de Créditos Fiscais pelo IBIJUS.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ebook-faq">
+            <div class="container">
+                <h2 class="section-title">Perguntas Frequentes</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Quanto tempo leva para ver resultados?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Os primeiros resultados podem aparecer em 30-60 dias, dependendo do volume de documentos e complexidade do caso. Alguns clientes identificaram mais de R$ 20.000 em impostos recuperáveis já na primeira semana após aplicar as técnicas do livro.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Preciso ser advogado para aplicar?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não! O livro foi escrito especialmente para empreendedores. Todas as estratégias são explicadas passo a passo em linguagem clara e acessível.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>E se eu não gostar do livro?</h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oferecemos garantia incondicional de 7 dias. Se por qualquer motivo você não ficar satisfeito, basta enviar um email que devolvemos 100% do seu dinheiro.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ebook-final-cta">
+            <div class="container">
+                <div class="final-cta-content">
+                    <h2>Não perca esta oportunidade!</h2>
+                    <p>Invista no conhecimento que vai proteger e impulsionar seu negócio</p>
+                    
+                    <div class="urgency-box">
+                        <p>Oferta por tempo limitado</p>
+                    </div>
+                    
+                    <a href="SEU_LINK_DA_HOTMART_AQUI" class="btn btn--primary" target="_blank">
+                        Sim, Quero Adquirir por R$ 97,00
+                    </a>
+                    
+                    <div class="payment-methods">
+                        <p>Formas de pagamento:</p>
+                        <div class="payment-icons">
+                            <span>Visa</span>
+                            <span>Mastercard</span>
+                            <span>Pix</span>
+                            <span>Boleto</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 LMFAC - LMF Advocacia e Consultoria. Todos os direitos reservados.</p>
+                <div class="footer-links">
+                    <a href="index.html">Início</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script simplificado para o FAQ -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

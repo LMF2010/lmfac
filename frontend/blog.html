@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | LMFAC - Moura França Advocacia e Consultoria</title>
-    <meta name="description" content="Artigos e notícias sobre recuperação fiscal, execuções fiscais, crimes econômicos e consultoria jurídica para empresas do SIMPLES Nacional.">
-    <meta name="keywords" content="blog, recuperação fiscal, execuções fiscais, crimes econômicos, consultoria jurídica, SIMPLES Nacional, tributário, notícias jurídicas">
+    <title>Blog | LMF Advocacia e Consultoria</title>
+    <meta name="description" content="Artigos especializados sobre recuperação fiscal, execuções fiscais, crimes econômicos e consultoria jurídica para empresas do SIMPLES Nacional.">
+    <meta name="keywords" content="blog jurídico, recuperação fiscal, impostos, consultoria tributária, direito empresarial, SIMPLES Nacional">
     <meta name="author" content="LMFAC - Moura França Advocacia e Consultoria">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://lmfac.com.br/blog.html">
@@ -13,106 +13,653 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lmfac.com.br/blog.html">
-    <meta property="og:title" content="Blog | LMFAC - Moura França Advocacia e Consultoria">
-    <meta property="og:description" content="Artigos e notícias sobre recuperação fiscal, execuções fiscais, crimes econômicos e consultoria jurídica para empresas do SIMPLES Nacional.">
-    <meta property="og:image" content="https://lmfac.com.br/assets/images/og-image.jpg">
+    <meta property="og:title" content="Blog Jurídico Especializado | LMFAC Advocacia">
+    <meta property="og:description" content="Conteúdo especializado em direito tributário e empresarial para proteger e impulsionar seu negócio.">
+    <meta property="og:image" content="https://lmfac.com.br/assets/images/blog-og.jpg">
     <meta property="og:locale" content="pt_BR">
-    <meta property="og:site_name" content="LMFAC - Moura França Advocacia e Consultoria">
+    <meta property="og:site_name" content="LMF Advocacia e Consultoria">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://lmfac.com.br/blog.html">
-    <meta property="twitter:title" content="Blog | LMFAC - Moura França Advocacia e Consultoria">
-    <meta property="twitter:description" content="Artigos e notícias sobre recuperação fiscal, execuções fiscais, crimes econômicos e consultoria jurídica para empresas do SIMPLES Nacional.">
-    <meta property="twitter:image" content="https://lmfac.com.br/assets/images/twitter-card.jpg">
+    <meta property="twitter:title" content="Blog Jurídico Especializado | LMFAC Advocacia">
+    <meta property="twitter:description" content="Conteúdo especializado em direito tributário e empresarial para proteger e impulsionar seu negócio.">
+    <meta property="twitter:image" content="https://lmfac.com.br/assets/images/blog-twitter.jpg">
 
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+        
+        .top-banner {
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 10px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+        
+        nav a:hover, nav a.active {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), 
+                        url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .hero__title {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero__subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        .blog-card__image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .blog-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-card__image img {
+            transform: scale(1.05);
+        }
+        
+        .blog-card__content {
+            padding: 25px;
+        }
+        
+        .blog-card__meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .blog-card__author {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        
+        .blog-card__author i {
+            margin-right: 8px;
+            color: var(--secondary);
+        }
+        
+        .blog-card__date i {
+            margin-right: 8px;
+            color: var(--secondary);
+        }
+        
+        .blog-card__title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            line-height: 1.4;
+        }
+        
+        .blog-card__description {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .blog-card__link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .blog-card__link i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card__link:hover {
+            color: var(--primary);
+        }
+        
+        .blog-card__link:hover i {
+            transform: translateX(5px);
+        }
+        
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            gap: 10px;
+        }
+        
+        .category-btn {
+            background: var(--light);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .subscribe-section {
+            background: linear-gradient(to right, var(--primary), #1a2530);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 60px 0;
+            border-radius: var(--border-radius);
+        }
+        
+        .subscribe-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .subscribe-text {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .subscribe-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+        }
+        
+        .subscribe-form input {
+            flex: 1;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1rem;
+        }
+        
+        .subscribe-form button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .subscribe-form button:hover {
+            background: #c0392b;
+        }
+        
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .footer-social a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        @media (max-width: 768px) {
+            .hero__title {
+                font-size: 2.2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .subscribe-form {
+                flex-direction: column;
+            }
+            
+            .subscribe-form input {
+                border-radius: 4px;
+                margin-bottom: 10px;
+            }
+            
+            .subscribe-form button {
+                border-radius: 4px;
+                padding: 14px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-        <!-- Nova seção apenas para a imagem do banner -->
-    <div class="top-banner">
-        <!-- Este div está vazio de propósito. A imagem será colocada via CSS. -->
-    </div>
+    <div class="top-banner"></div>
 
-    <!-- O header agora conterá apenas o menu de navegação -->
     <header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="como-funciona.html">Como Funciona</a></li>
-            <li><a href="index.html#servicos">Serviços</a></li>
-            <li><a href="ebook.html">Ebook</a></li>
-            <li><a href="blog.html" class="active">Blog</a></li>
-            <li><a href="index.html#contato">Contato</a></li>
-        </ul>
-    </nav>
-</header>
-
-
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="como-funciona.html">Como Funciona</a></li>
+                <li><a href="index.html#servicos">Serviços</a></li>
+                <li><a href="ebook.html">Ebook</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <section class="hero hero--small">
+        <section class="hero">
             <div class="container">
-                <h1 class="hero__title">Nosso Blog</h1>
-                <p class="hero__subtitle">Artigos e insights sobre direito tributário e empresarial para o seu negócio.</p>
+                <h1 class="hero__title">Blog Jurídico Especializado</h1>
+                <p class="hero__subtitle">Conteúdo valioso sobre direito tributário e empresarial para proteger e impulsionar seu negócio</p>
             </div>
         </section>
 
-        <section class="content-section">
-            <div class="container">
-                <div class="blog-grid">
-                    <!-- Artigo 1 -->
-                    <div class="blog-card">
+        <div class="container">
+            <div class="category-filter">
+                <button class="category-btn active">Todos</button>
+                <button class="category-btn">Recuperação Fiscal</button>
+                <button class="category-btn">SIMPLES Nacional</button>
+                <button class="category-btn">Consultoria</button>
+                <button class="category-btn">Jurisprudência</button>
+            </div>
+            
+            <div class="blog-grid">
+                <!-- Artigo 1 -->
+                <div class="blog-card">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Autopeças e créditos tributários">
+                    </div>
+                    <div class="blog-card__content">
+                        <div class="blog-card__meta">
+                            <div class="blog-card__author">
+                                <i class="fas fa-user"></i> Laura de M. França
+                            </div>
+                            <div class="blog-card__date">
+                                <i class="far fa-calendar"></i> 29 de maio de 2025
+                            </div>
+                        </div>
                         <h3 class="blog-card__title">Autopeças: Como Recuperar Créditos Tributários e Transformar Impostos em Oportunidades</h3>
-                        <p class="blog-card__meta">Por Laura Franca | 29 de mai.</p>
-                        <p class="blog-card__description">Descobre como lojas de autopeças podem recuperar créditos tributários pagos a maior e reduzir impostos legalmente. Identifica sinais de NCM errado e benefícios não aproveitados. Menciona Área VIP para atendimento prioritário e diagnóstico gratuito.</p>
+                        <p class="blog-card__description">Descubra como lojas de autopeças podem recuperar créditos tributários pagos a maior e reduzir impostos legalmente. Identifique sinais de NCM errado e benefícios não aproveitados.</p>
                         <a href="blog_artigo_autopeças.html" class="blog-card__link">Leia mais <i class="fas fa-arrow-right"></i></a>
                     </div>
+                </div>
 
-                    <!-- Artigo 2 -->
-                    <div class="blog-card">
+                <!-- Artigo 2 -->
+                <div class="blog-card">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Transformando o medo do fisco em oportunidade">
+                    </div>
+                    <div class="blog-card__content">
+                        <div class="blog-card__meta">
+                            <div class="blog-card__author">
+                                <i class="fas fa-user"></i> Laura de M. França
+                            </div>
+                            <div class="blog-card__date">
+                                <i class="far fa-calendar"></i> 26 de abril de 2025
+                            </div>
+                        </div>
                         <h3 class="blog-card__title">Como Empresas Inteligentes Estão Transformando o Medo do Fisco em Oportunidade Real</h3>
-                        <p class="blog-card__meta">Por Laura Franca | 26 de abr.</p>
-                        <p class="blog-card__description">Empresas no Simples Nacional podem recuperar valores pagos indevidamente ao adotar postura estratégica: monitorar enquadramento mensal, conferir códigos fiscais e usar créditos tributários para reinvestir no negócio. Ação prática e conformidade legal garantem saúde financeira.</p>
+                        <p class="blog-card__description">Empresas no Simples Nacional podem recuperar valores pagos indevidamente ao adotar postura estratégica: monitorar enquadramento mensal, conferir códigos fiscais e usar créditos tributários para reinvestir no negócio.</p>
                         <a href="blog_artigo_fisco.html" class="blog-card__link">Leia mais <i class="fas fa-arrow-right"></i></a>
                     </div>
+                </div>
 
-                    <!-- Artigo 3 -->
-                    <div class="blog-card">
+                <!-- Artigo 3 -->
+                <div class="blog-card">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Riscos fiscais para PMEs">
+                    </div>
+                    <div class="blog-card__content">
+                        <div class="blog-card__meta">
+                            <div class="blog-card__author">
+                                <i class="fas fa-user"></i> Laura de M. França
+                            </div>
+                            <div class="blog-card__date">
+                                <i class="far fa-calendar"></i> 19 de abril de 2025
+                            </div>
+                        </div>
                         <h3 class="blog-card__title">Riscos Fiscais que Comprometem o Caixa das PMEs e Como a Consultoria Tributária Pode Ajudar?</h3>
-                        <p class="blog-card__meta">Por Laura Franca | 19 de abr.</p>
                         <p class="blog-card__description">Aborda como erros em Substituição Tributária, Simples Nacional e NCMs comprometem o caixa das PMEs. Destaca como a consultoria tributária digital ajuda a reduzir autuações e recuperar valores pagos a mais ao Fisco.</p>
                         <a href="blog_artigo_riscos_fiscais.html" class="blog-card__link">Leia mais <i class="fas fa-arrow-right"></i></a>
                     </div>
+                </div>
 
-                    <!-- Artigo 4 -->
-                    <div class="blog-card">
+                <!-- Artigo 4 -->
+                <div class="blog-card">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Recuperação tributária">
+                    </div>
+                    <div class="blog-card__content">
+                        <div class="blog-card__meta">
+                            <div class="blog-card__author">
+                                <i class="fas fa-user"></i> Laura de M. França
+                            </div>
+                            <div class="blog-card__date">
+                                <i class="far fa-calendar"></i> 17 de janeiro de 2025
+                            </div>
+                        </div>
                         <h3 class="blog-card__title">Recuperação Tributária: Descubra Se Você Está Deixando Dinheiro na Mesa</h3>
-                        <p class="blog-card__meta">Por Laura Franca | 17 de jan.</p>
                         <p class="blog-card__description">Explica que muitas empresas pagam impostos a mais sem perceber e como a recuperação tributária pode ajudar a reaver esses valores.</p>
                         <a href="blog_artigo_recuperacao_tributaria.html" class="blog-card__link">Leia mais <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+
+                <!-- Artigo 5 -->
+                <div class="blog-card">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Gestão fiscal eficiente">
+                    </div>
+                    <div class="blog-card__content">
+                        <div class="blog-card__meta">
+                            <div class="blog-card__author">
+                                <i class="fas fa-user"></i> Laura de M. França
+                            </div>
+                            <div class="blog-card__date">
+                                <i class="far fa-calendar"></i> 5 de março de 2025
+                            </div>
+                        </div>
+                        <h3 class="blog-card__title">5 Estratégias para uma Gestão Fiscal Eficiente em Pequenas Empresas</h3>
+                        <p class="blog-card__description">Conheça as melhores práticas para otimizar a gestão fiscal da sua empresa e evitar problemas com o fisco, garantindo saúde financeira e conformidade legal.</p>
+                        <a href="#" class="blog-card__link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Artigo 6 -->
+                <div class="blog-card">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Mudanças na legislação tributária">
+                    </div>
+                    <div class="blog-card__content">
+                        <div class="blog-card__meta">
+                            <div class="blog-card__author">
+                                <i class="fas fa-user"></i> Laura de M. França
+                            </div>
+                            <div class="blog-card__date">
+                                <i class="far fa-calendar"></i> 14 de fevereiro de 2025
+                            </div>
+                        </div>
+                        <h3 class="blog-card__title">Mudanças na Legislação Tributária 2025: O Que Sua Empresa Precisa Saber</h3>
+                        <p class="blog-card__description">Análise completa das principais alterações na legislação tributária brasileira e como elas impactam empresas do SIMPLES Nacional e outros regimes.</p>
+                        <a href="#" class="blog-card__link">Leia mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
             </div>
-        </section>
+            
+            <div class="subscribe-section">
+                <h2 class="subscribe-title">Inscreva-se na Newsletter Jurídica</h2>
+                <p class="subscribe-text">Receba artigos exclusivos, atualizações legais e dicas valiosas para proteger seu negócio diretamente em seu e-mail.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit">Inscrever-se <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 LMFAC - Moura França Advocacia e Consultoria. Todos os direitos reservados.</p>
-            <div class="footer__social">
-                <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Sobre a LMFAC</h3>
+                <p>Especializada em direito tributário e empresarial, oferecemos soluções jurídicas inteligentes para proteger e impulsionar seu negócio.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
+            
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="como-funciona.html">Como Funciona</a></li>
+                    <li><a href="index.html#servicos">Serviços</a></li>
+                    <li><a href="ebook.html">Ebook</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Áreas de Atuação</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Recuperação Tributária</a></li>
+                    <li><a href="#">Defesa em Execuções Fiscais</a></li>
+                    <li><a href="#">Crimes Econômicos</a></li>
+                    <li><a href="#">Consultoria Empresarial</a></li>
+                    <li><a href="#">Planejamento Tributário</a></li>
+                    <li><a href="#">Compliance Fiscal</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> Maceió, AL</li>
+                    <li><i class="fas fa-phone"></i> (82) 3436-6497</li>
+                    <li><i class="fas fa-envelope"></i> contato@lmfac.com.br</li>
+                    <li><i class="far fa-clock"></i> Seg-Sex: 9h às 18h</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 LMFAC - Moura França Advocacia e Consultoria. Todos os direitos reservados.</p>
+            <p>CNPJ: 00.000.000/0000-00 | OAB/PE 31.768</p>
         </div>
     </footer>
 
-<script src="assets/js/main.js"></script>
-<script src="assets/js/agendamento_novo.js"></script>
-<script src="assets/js/chatbot.js"></script>
-
+    <script>
+        // Script para filtro de categorias
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Simulação de filtragem - em implementação real, aqui seria o filtro
+                console.log('Categoria selecionada:', this.textContent);
+            });
+        });
+        
+        // Script para rolagem suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
