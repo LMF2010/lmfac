@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assistente Virtual</title>
+    <style>
+        /* Mantenha todo o seu CSS existente */
+        .phone-frame {
+            max-width: 360px;
+            height: 600px;
+            margin: 0 auto;
+            border: 12px solid #333;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+            background: #f0f0f0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .chat-header {
+            background: #128C7E;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        #chat-messages {
+            height: calc(100% - 120px);
+            overflow-y: auto;
+            padding: 10px;
+            background: #ECE5DD;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.05"><rect width="100" height="100" fill="none"/><path d="M20,20 Q50,10 80,20" stroke="gray" fill="none"/></svg>');
+            scroll-behavior: smooth;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            border-radius: 7.5px;
+            clear: both;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0.5; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .received {
+            background: white;
+            float: left;
+        }
+        
+        .sent {
+            background: #DCF8C6;
+            float: right;
+        }
+        
+        .input-container {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 10px;
+            background: white;
+            border-top: 1px solid #ddd;
+            display: flex;
+        }
+        
+        #user-input {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+        }
+        
+        button {
+            margin-left: 8px;
+            padding: 8px 15px;
+            background: #128C7E;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-frame">
+        <div class="chat-header">
+            Moura & França Advocacia
+        </div>
+        
+        <div id="chat-messages"></div>
+        
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Digite sua mensagem..." autocomplete="off">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        
+        // Mensagem inicial do bot
+        addMessage("Olá! Sou a assistente virtual. Como posso ajudar?", false);
+        
+        function addMessage(text, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'sent' : 'received'}`;
+            messageDiv.textContent = text;
+            chatMessages.appendChild(messageDiv);
+            scrollToBottom();
+        }
+        
+        function scrollToBottom() {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            setTimeout(() => {
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 100);
+        }
+        
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                userInput.value = '';
+                
+                fetch('/conversa', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ mensagem: message })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Erro HTTP: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && data.resposta) {
+                        addMessage(data.resposta, false);
+                    } else {
+                        throw new Error('Resposta inválida do servidor');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro na requisição:', error);
+                    addMessage("Ops! Estou tendo dificuldades técnicas. Por favor, tente novamente.", false);
+                });
+            }
+        }
+        
+        // Enviar com Enter
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>

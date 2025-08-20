@@ -3,163 +3,880 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recuperação Fiscal de Produtos Monofásicos - LMFAC Advocacia</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <<link rel="stylesheet" href="assets/css/style.css">
+    <title>LMF Advocacia & Consultoria - Soluções Jurídicas Inteligentes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .page-header {
-            background-color: #002366;
-            color: #FFF;
-            padding: 50px 20px;
+        /* VARIÁVEIS DE CORES */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --light-gray: #e9ecef;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        /* RESET E ESTILOS GERAIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* HEADER */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        .digital-badge {
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--secondary);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        nav a:hover {
+            color: var(--secondary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* CONTEÚDO PRINCIPAL */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 60px;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+        
+        .services {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            background: var(--primary);
+            color: white;
+            font-size: 2.5rem;
+            padding: 30px;
             text-align: center;
         }
-        .page-header h1 {
-            font-size: 2.8em;
-            margin: 0;
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        /* SEÇÃO DE PRODUTOS MONOFÁSICOS (TÍTULO CORRIGIDO) */
+        .monofasicos-section {
+            background: var(--primary);
+            padding: 80px 20px;
+            margin-bottom: 60px;
+            color: white;
+            text-align: center;
+        }
+        
+        .monofasicos-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white; /* Garantindo contraste */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .monofasicos-section p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .cta-box {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: var(--secondary);
+        }
+        
+        .cta-box h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .cta-box p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* RODAPÉ CORRIGIDO */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-column {
+            margin-bottom: 20px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+            color: white;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-about {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 1.3rem;
+            color: white;
+        }
+        
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .digital-badge-footer {
+            background: rgba(255,255,255,0.1);
+            color: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 8px 0 12px;
+            width: fit-content;
+        }
+        
+        .footer-about p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            opacity: 0.9;
+            font-size: 0.95rem;
+            color: #f0f0f0;
+        }
+        
+        .areas-list {
+            list-style: none;
+            margin-top: 10px;
+            padding: 0;
+        }
+        
+        .areas-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #f0f0f0;
+        }
+        
+        .areas-list li i {
+            color: var(--secondary);
+            margin-right: 8px;
+            width: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
             margin-bottom: 10px;
         }
-        .page-header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .content-section {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .content-section h2 {
-            color: #D4AF37;
-            font-size: 1.8em;
-            border-bottom: 2px solid #F3F7F5;
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-        .content-section ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            line-height: 1.6;
-        }
-        .cta-section {
-            background-color: #F4F1DE;
-            text-align: center;
-            margin-top: 40px;
-        }
-        .cta-button {
-            background-color: #D4AF37;
-            color: #FFF;
-            padding: 15px 30px;
-            border-radius: 5px;
+        
+        .footer-links a {
+            color: #ccc;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: background-color 0.3s;
-            display: inline-block;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
         }
-        .cta-button:hover {
-            background-color: #b89b31;
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-links a i {
+            color: var(--secondary);
+            margin-right: 8px;
+            width: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .contact-info li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: #f0f0f0;
+        }
+        
+        .contact-info i {
+            color: var(--secondary);
+            margin-right: 12px;
+            margin-top: 3px;
+            min-width: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .social-title {
+            font-size: 1.1rem;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: white;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        .footer-social a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .social-tooltip {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+        
+        .footer-social a:hover .social-tooltip {
+            opacity: 1;
+            bottom: -35px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        .footer-copyright {
+            margin-bottom: 8px;
+        }
+        
+        .footer-legal {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 20px;
+                justify-content: center;
+            }
+            
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav li {
+                margin: 0 10px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .service-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 70px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin: 0 0 15px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .cta-box {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .footer-bottom {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
-
-        <!-- Nova seção apenas para a imagem do banner -->
-    <div class="top-banner">
-        <!-- Este div está vazio de propósito. A imagem será colocada via CSS. -->
-    </div>
-
-    <!-- O header agora conterá apenas o menu de navegação -->
+    <!-- HEADER -->
     <header>
         <div class="container">
-            <a href="index.html" class="logo-link"></a> <!-- Link invisível para a home, para SEO -->
-            <nav>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="ebook.html">Ebook</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div>
+                        <div class="logo-text">LMF <span>Advocacia & Consultoria</span></div>
+                        <div class="digital-badge">
+                            <i class="fas fa-globe"></i> 100% DIGITAL - Atendemos todo o Brasil
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
-
-    <main>
-        <section class="page-header">
-            <h1>Recuperação Fiscal de Produtos Monofásicos</h1>
-            <p>Recupere PIS e COFINS pagos indevidamente e impulsione seu negócio.</p>
-        </section>
-
-        <section class="section-padding">
-            <div class="container content-section">
-                <p>Muitas empresas do <strong>SIMPLES Nacional</strong>, especialmente nos setores de bares, restaurantes, farmácias, mercearias, mini mercados, importadoras e distribuidoras de bebidas, pagam PIS e COFINS a mais sobre produtos monofásicos sem saber. Isso acontece porque a tributação desses produtos já foi recolhida na origem (pelo fabricante ou importador), e a revenda por empresas do SIMPLES Nacional deveria ser isenta dessas contribuições.</p>
-
-                <h2>O que são Produtos Monofásicos?</h2>
-                <p>Produtos monofásicos são aqueles que têm a incidência de PIS e COFINS concentrada em uma única etapa da cadeia produtiva, geralmente na indústria ou importação. Isso significa que, ao adquirir esses produtos para revenda, sua empresa do SIMPLES Nacional não deveria pagar novamente essas contribuições. Exemplos comuns incluem:</p>
-                <ul>
-                    <li>Bebidas frias (cervejas, refrigerantes, águas, energéticos)</li>
-                    <li>Medicamentos e produtos de perfumaria, higiene pessoal e cosméticos</li>
-                    <li>Pneus e câmaras de ar</li>
-                    <li>Combustíveis (gasolina, diesel, álcool)</li>
-                </ul>
-
-                <h2>Quem tem Direito à Recuperação?</h2>
-                <p>Empresas do SIMPLES Nacional que revendem produtos monofásicos e que, por desconhecimento ou erro na classificação fiscal, acabaram pagando PIS e COFINS sobre eles, têm direito à recuperação desses valores. Essa recuperação pode ser feita dos últimos 5 anos e representa um alívio significativo para o caixa da sua empresa.</p>
-
-                <h2>Como Funciona a Recuperação?</h2>
-                <p>Nosso processo de recuperação fiscal é rápido, seguro e totalmente legal. Realizamos uma análise detalhada da sua contabilidade e dos produtos que sua empresa comercializa para identificar os valores pagos a maior. Em seguida, preparamos toda a documentação necessária e protocolamos o pedido de restituição junto à Receita Federal. <strong>Você só paga se tivermos sucesso na recuperação!</strong></p>
-            </div>
-        </section>
-
-        <section class="cta-section section-padding">
-            <div class="container">
-                <h2>Benefícios para Sua Empresa:</h2>
-                <ul>
-                    <li><strong>Aumento da Liquidez:</strong> Dinheiro que já é seu de volta ao caixa.</li>
-                    <li><strong>Redução de Custos:</strong> Diminuição da carga tributária futura.</li>
-                    <li><strong>Segurança Jurídica:</strong> Processo 100% legal e transparente.</li>
-                    <li><strong>Foco no Negócio:</strong> Deixe a burocracia conosco e foque no que realmente importa.</li>
-                </ul>
-                  
-
-                <a href="#contato" class="cta-button">Solicitar Diagnóstico Gratuito</a>
-            </div>
-        </section>
-    </main>
-
-    <footer id="contato">
+    <!-- HERO SECTION -->
+    <section class="hero">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h3>LMFAC Advocacia & Consultoria</h3>
-                    <p>Soluções inteligentes em direito tributário para sua empresa.</p>
+            <h1>Soluções Jurídicas Inteligentes para o seu Negócio</h1>
+            <p>Especialistas em Direito Tributário, Penal e Empresarial com foco em resultados eficientes e proteção jurídica estratégica para empresas em todo o Brasil.</p>
+            <a href="#diagnostico" class="btn">Solicitar Diagnóstico Gratuito</a>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Nossas Áreas de Atuação</h2>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Recuperação Tributária</h3>
+                        <p>Recuperamos créditos tributários de forma estratégica e eficiente, maximizando seus recursos financeiros.</p>
+                        <a href="#" class="btn">Saiba mais</a>
+                    </div>
                 </div>
-                <div class="footer-contact">
-                    <h3>Contato</h3>
-                    <p>Telefone/WhatsApp: (82) 3436-6497</p>
-                    <p>E-mail: lmfpro@yahoo.com</p>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Defesa Fiscal</h3>
+                        <p>Atuamos na defesa de seus direitos fiscais, combatendo autuações irregulares e multas indevidas.</p>
+                        <a href="#" class="btn">Saiba mais</a>
+                    </div>
                 </div>
-                <div class="footer-social">
-                    <h3>Redes Sociais</h3>
-                    <!-- Links do LinkedIn adicionados -->
-                    <a href="https://www.instagram.com/laurafranca.adv/" target="_blank">Instagram Pessoal</a>
-                    <a href="https://www.instagram.com/lmf.ac_adv.trib/" target="_blank">Instagram Escritório</a>
-                    <a href="https://www.linkedin.com/in/lmfac" target="_blank">LinkedIn Pessoal</a>
-                    <a href="https://www.linkedin.com/company/lmf-advocacia-e-consultoria" target="_blank">LinkedIn Escritório</a>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Crimes Econômicos</h3>
+                        <p>Defesa especializada em crimes contra o sistema financeiro, lavagem de dinheiro e fraudes empresariais.</p>
+                        <a href="#" class="btn">Saiba mais</a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 LMFAC Advocacia. Todos os direitos reservados.</p>
-                <p style="font-size: 0.8em; opacity: 0.7;">Laura de Moura França - OAB/PE 31.768</p>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE PRODUTOS MONOFÁSICOS (TÍTULO CORRIGIDO) -->
+    <section class="monofasicos-section">
+        <div class="container">
+            <h2>Recuperação Fiscal de Produtos Monofásicos</h2>
+            <p>Especialistas em recuperar créditos fiscais de produtos monofásicos como combustíveis, cigarros, energia elétrica e outros. Atuamos com estratégias personalizadas para maximizar sua recuperação.</p>
+            <a href="#monofasicos" class="btn">Saiba mais sobre recuperação</a>
+        </div>
+    </section>
+
+    <!-- CHAMADA PARA AÇÃO -->
+    <section class="cta-container">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Foco no que realmente importa: seu negócio</h2>
+                <p>Deixe as questões jurídicas complexas conosco enquanto você se concentra em fazer seu negócio crescer. Oferecemos soluções inteligentes e personalizadas para sua empresa.</p>
+                <a href="#diagnostico" class="btn">Solicitar Diagnóstico Gratuito</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ CORRIGIDO -->
+    <footer>
+        <div class="footer-content">
+            <!-- BLOCO 1: SOBRE A LMF -->
+            <div class="footer-column">
+                <div class="footer-about">
+                    <div class="brand">
+                        <div class="brand-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="brand-name">LMF Advocacia & Consultoria</div>
+                    </div>
+                    
+                    <div class="digital-badge-footer">
+                        <i class="fas fa-globe"></i> 100% DIGITAL - Atendemos todo o Brasil
+                    </div>
+                    
+                    <p>Especializados em Direito Tributário, Penal e Empresarial, oferecemos soluções jurídicas inteligentes para proteger e impulsionar seu negócio.</p>
+                </div>
+            </div>
+            
+            <!-- BLOCO 2: ÁREAS DE ATUAÇÃO -->
+            <div class="footer-column">
+                <h3>Áreas de Atuação</h3>
+                <ul class="areas-list">
+                    <li><i class="fas fa-arrow-right"></i> Recuperação Tributária</li>
+                    <li><i class="fas fa-arrow-right"></i> Defesa Fiscal</li>
+                    <li><i class="fas fa-arrow-right"></i> Crimes Econômicos</li>
+                    <li><i class="fas fa-arrow-right"></i> Consultoria Jurídica</li>
+                    <li><i class="fas fa-arrow-right"></i> Planejamento Tributário</li>
+                </ul>
+            </div>
+            
+            <!-- BLOCO 3: LINKS RÁPIDOS -->
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="como-funciona.html"><i class="fas fa-cogs"></i> Como Funciona</a></li>
+                    <li><a href="index.html#servicos"><i class="fas fa-briefcase"></i> Serviços</a></li>
+                    <li><a href="ebook.html"><i class="fas fa-book"></i> Ebook</a></li>
+                    <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="sobre.html"><i class="fas fa-users"></i> Sobre Nós</a></li>
+                </ul>
+            </div>
+            
+            <!-- BLOCO 4: CONTATO + REDES SOCIAIS -->
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Maceió, AL</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>(82) 3436-6497</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>contato@lmfac.com.br</span>
+                    </li>
+                    <li>
+                        <i class="far fa-clock"></i>
+                        <span>Seg-Sex: 9h às 18h</span>
+                    </li>
+                </ul>
+                
+                <div class="social-title">Nossas Redes</div>
+                <div class="footer-social">
+                    <!-- LinkedIn Laura -->
+                    <a href="https://www.linkedin.com/in/lmfac" target="_blank" title="Laura França - LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="social-tooltip">Laura França</span>
+                    </a>
+                    
+                    <!-- LinkedIn Escritório -->
+                    <a href="https://www.linkedin.com/company/lmf-advocacia-e-consultoria" target="_blank" title="LMF Advocacia - LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="social-tooltip">Escritório</span>
+                    </a>
+                    
+                    <!-- Instagram Laura -->
+                    <a href="https://www.instagram.com/laurafranca.adv/#" target="_blank" title="Laura França - Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-tooltip">Laura França</span>
+                    </a>
+                    
+                    <!-- Instagram Escritório -->
+                    <a href="https://www.instagram.com/lmf.ac_adv.trib/" target="_blank" title="LMF Advocacia - Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-tooltip">Escritório</span>
+                    </a>
+                    
+                    <!-- Facebook Escritório -->
+                    <a href="https://www.facebook.com/profile.php?id=61572964746886" target="_blank" title="LMF Advocacia - Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="social-tooltip">Facebook</span>
+                    </a>
+                    
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/558234366497" target="_blank" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="social-tooltip">WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                &copy; 2025 LMFAC - Moura França Advocacia e Consultoria. Todos os direitos reservados.
+            </div>
+            <div class="footer-legal">
+                CNPJ: 00.000.000/0000-00 
             </div>
         </div>
     </footer>
 
-<script src="assets/js/main.js"></script>
-<script src="assets/js/agendamento_novo.js"></script>
-<script src="assets/js/chatbot.js"></script>
-
+    <script>
+        // Script para menu mobile
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('main-nav').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
-

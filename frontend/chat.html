@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aly - Assistente Jurídico</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .chat-container {
+            width: 100%;
+            max-width: 400px;
+            height: 90vh;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .chat-header {
+            background: #128C7E;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .chat-header h1 {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .chat-header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .online-indicator {
+            width: 10px;
+            height: 10px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            position: absolute;
+            top: 25px;
+            right: 20px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 1rem;
+            line-height: 1.4;
+            animation: fadeIn 0.3s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .bot-message {
+            background-color: white;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .user-message {
+            background-color: #dcf8c6;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .option-button {
+            background-color: white;
+            border: 2px solid #128C7E;
+            color: #128C7E;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+        }
+        
+        .option-button:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+        
+        .typing-indicator {
+            background-color: white;
+            align-self: flex-start;
+            padding: 10px 15px;
+            border-radius: 18px;
+            display: inline-block;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            color: #666;
+            font-style: italic;
+        }
+        
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .user-input {
+            padding: 12px 16px;
+            border: 2px solid #128C7E;
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+        
+        .send-button {
+            background-color: #128C7E;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .back-button {
+            background-color: #f0f2f5;
+            color: #555;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            align-self: center;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        .back-button:hover {
+            background-color: #e0e2e5;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="online-indicator"></div>
+            <h1>Aly - Assistente Jurídico</h1>
+            <p>Escritório LMFAC - Especializado em Direito Tributário</p>
+        </div>
+        
+        <div class="chat-messages" id="chat-messages">
+            <!-- Mensagens serão adicionadas aqui -->
+        </div>
+    </div>
+
+    <script>
+        // Elementos DOM
+        const chatMessages = document.getElementById('chat-messages');
+        
+        // Adiciona mensagem ao chat com animação
+        function addMessage(text, isUser = false, delay = 0) {
+            if (delay > 0) {
+                showTyping(delay);
+                setTimeout(() => {
+                    _addMessage(text, isUser);
+                }, delay);
+            } else {
+                _addMessage(text, isUser);
+            }
+        }
+        
+        function _addMessage(text, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
+            messageDiv.innerHTML = text;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // Mostra "digitando..."
+        function showTyping(duration) {
+            const typingDiv = document.createElement('div');
+            typingDiv.classList.add('typing-indicator', 'message', 'bot-message');
+            typingDiv.textContent = 'Aly está digitando...';
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            setTimeout(() => {
+                typingDiv.remove();
+            }, duration);
+        }
+        
+        // Mostra botões de opção
+        function showOptions(options) {
+            const container = document.createElement('div');
+            container.classList.add('options-container');
+            
+            options.forEach(opt => {
+                const button = document.createElement('button');
+                button.classList.add('option-button');
+                button.innerHTML = opt.text;
+                button.onclick = opt.action;
+                container.appendChild(button);
+            });
+            
+            // Adiciona botão de atendimento humano
+            const humanButton = document.createElement('button');
+            humanButton.classList.add('option-button');
+            humanButton.innerHTML = '👩‍💼 Falar com Atendente Humano';
+            humanButton.onclick = startHumanSupport;
+            container.appendChild(humanButton);
+            
+            // Adiciona botão de voltar
+            const backButton = document.createElement('button');
+            backButton.classList.add('option-button');
+            backButton.innerHTML = '↩ Voltar ao Menu Principal';
+            backButton.onclick = showMainMenu;
+            container.appendChild(backButton);
+            
+            chatMessages.appendChild(container);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // Mostra campo de input para resposta
+        function showInputField(placeholder, callback) {
+            const inputContainer = document.createElement('div');
+            inputContainer.classList.add('input-container');
+            
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.classList.add('user-input');
+            input.placeholder = placeholder;
+            
+            const sendButton = document.createElement('button');
+            sendButton.classList.add('send-button');
+            sendButton.textContent = 'Enviar';
+            sendButton.onclick = () => {
+                if (input.value.trim()) {
+                    addMessage(input.value, true);
+                    callback(input.value.trim());
+                    inputContainer.remove();
+                }
+            };
+            
+            const backButton = document.createElement('button');
+            backButton.classList.add('back-button');
+            backButton.textContent = 'Voltar';
+            backButton.onclick = showMainMenu;
+            
+            inputContainer.appendChild(input);
+            inputContainer.appendChild(sendButton);
+            inputContainer.appendChild(backButton);
+            
+            chatMessages.appendChild(inputContainer);
+            input.focus();
+        }
+        
+        // ================= FLUXOS PRINCIPAIS =================
+        
+        // Diagnóstico Gratuito
+        function startFreeDiagnosis() {
+            addMessage("Diagnóstico Gratuito de Créditos Tributários", true);
+            
+            addMessage(`
+                <strong>✅ Serviço 100% gratuito!</strong><br><br>
+                • Análise completa de créditos tributários<br>
+                • Prazo de entrega: 48 horas<br>
+                • Sem compromisso<br>
+                • Formato totalmente online<br><br>
+                <span style="color:#128C7E">Abrindo formulário...</span>
+            `, false, 1500);
+            
+            setTimeout(() => {
+                window.open('https://forms.gle/x5sS8u1n7hkHw6166');
+                setTimeout(showMainMenu, 2000);
+            }, 2000);
+        }
+        
+        // Defesa em Execução Tributária
+        function startDefenseService() {
+            addMessage("Defesa em Execução Tributária", true);
+            
+            addMessage(`
+                <strong>🔒 Serviço Especializado</strong><br><br>
+                • Valor: <span style="color:#d32f2f">R$ 1.250,00</span> (dedutível dos honorários)<br>
+                • Atuação jurídica estratégica completa<br>
+                • Formato: 100% online<br>
+                • Visitas presenciais sob agendamento<br><br>
+                <i>Preciso de algumas informações para priorizar seu caso...</i>
+            `, false, 1500);
+            
+            setTimeout(() => {
+                showInputField("Ex: Receita Federal, R$85.000, 05/08/2025", (response) => {
+                    addMessage(`
+                        <strong>Informações recebidas!</strong><br><br>
+                        • Especialista entrará em contato em até 1 hora útil<br>
+                        • Você receberá confirmação por e-mail<br>
+                        <span style="color:#128C7E">Redirecionando para o WhatsApp...</span>
+                    `, false, 1500);
+                    
+                    setTimeout(() => {
+                        window.open(`https://wa.me/558234366497?text=Defesa%20Execução%20Tributária:%20${encodeURIComponent(response)}`);
+                        setTimeout(showMainMenu, 2000);
+                    }, 2000);
+                });
+            }, 1500);
+        }
+        
+        // Defesa em Crimes Tributários/Econômicos
+        function startCrimeDefense() {
+            addMessage("Defesa em Crimes Tributários/Econômicos", true);
+            
+            addMessage(`
+                <strong>⚠️ Serviço Especializado</strong><br><br>
+                • Valor: <span style="color:#d32f2f">R$ 1.250,00</span> (dedutível dos honorários)<br>
+                • Atuação jurídica estratégica completa<br>
+                • Formato: 100% online<br>
+                • Visitas presenciais sob agendamento<br><br>
+                <i>Preciso de algumas informações para priorizar seu caso...</i>
+            `, false, 1500);
+            
+            setTimeout(() => {
+                showInputField("Ex: Sonegação fiscal, Receita Federal, R$120.000", (response) => {
+                    addMessage(`
+                        <strong>Informações recebidas!</strong><br><br>
+                        • Especialista entrará em contato em até 1 hora útil<br>
+                        • Você receberá confirmação por e-mail<br>
+                        <span style="color:#128C7E">Redirecionando para o WhatsApp...</span>
+                    `, false, 1500);
+                    
+                    setTimeout(() => {
+                        window.open(`https://wa.me/558234366497?text=Defesa%20Crimes%20Tributários:%20${encodeURIComponent(response)}`);
+                        setTimeout(showMainMenu, 2000);
+                    }, 2000);
+                });
+            }, 1500);
+        }
+        
+        // Consultoria Jurídica Geral
+        function startGeneralConsulting() {
+            addMessage("Consultoria Jurídica Geral", true);
+            
+            addMessage(`
+                <strong>📚 Consultoria em Outras Áreas</strong><br><br>
+                • Valor: <span style="color:#d32f2f">R$ 350,00</span><br>
+                • Duração: Até 1 hora por videoconferência<br>
+                • Atendimento por especialistas parceiros<br>
+                • Formato: 100% online<br>
+                • Visitas presenciais sob agendamento<br><br>
+                <i>Vamos direcionar você para o especialista adequado...</i>
+            `, false, 1500);
+            
+            setTimeout(() => {
+                showInputField("Ex: Direito de Família, Divórcio consensual", (response) => {
+                    addMessage(`
+                        <strong>Informações registradas!</strong><br><br>
+                        • Um especialista entrará em contato<br>
+                        • Prazo: até 24 horas úteis<br>
+                        <span style="color:#128C7E">Redirecionando para o WhatsApp...</span>
+                    `, false, 1500);
+                    
+                    setTimeout(() => {
+                        window.open(`https://wa.me/558234366497?text=Consultoria%20Jurídica:%20${encodeURIComponent(response)}`);
+                        setTimeout(showMainMenu, 2000);
+                    }, 2000);
+                });
+            }, 1500);
+        }
+        
+        // Atendimento Humano
+        function startHumanSupport() {
+            addMessage("Falar com Atendente Humano", true);
+            
+            addMessage(`
+                <strong>Redirecionando para nosso WhatsApp...</strong><br><br>
+                • Atendimento personalizado<br>
+                • Horário comercial<br>
+                • Resposta em até 10 minutos<br><br>
+                <span style="color:#128C7E">Abrindo WhatsApp...</span>
+            `, false, 1500);
+            
+            setTimeout(() => {
+                window.open('https://wa.me/558234366497');
+                setTimeout(showMainMenu, 2000);
+            }, 2000);
+        }
+        
+        // Menu principal
+        function showMainMenu() {
+            // Limpa o chat (exceto a primeira mensagem)
+            while (chatMessages.children.length > 0) {
+                chatMessages.removeChild(chatMessages.firstChild);
+            }
+            
+            addMessage(`
+                Olá! Sou a Aly, assistente virtual do escritório LMFAC.<br>
+                Como posso ajudar você hoje?
+            `);
+            
+            showOptions([
+                {
+                    text: "1. Diagnóstico Gratuito de Créditos Tributários",
+                    action: startFreeDiagnosis
+                },
+                {
+                    text: "2. Defesa em Execução Tributária (R$ 1.250,00)",
+                    action: startDefenseService
+                },
+                {
+                    text: "3. Defesa em Crimes Tributários/Econômicos (R$ 1.250,00)",
+                    action: startCrimeDefense
+                },
+                {
+                    text: "4. Consultoria Jurídica Geral (R$ 350,00)",
+                    action: startGeneralConsulting
+                }
+            ]);
+        }
+        
+        // Inicia o chat quando a página carrega
+        window.onload = () => {
+            setTimeout(showMainMenu, 500);
+        };
+    </script>
+</body>
+</html>

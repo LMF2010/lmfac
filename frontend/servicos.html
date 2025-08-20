@@ -179,40 +179,58 @@
             box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
         }
         
-        /* Footer */
+        /* ================ FOOTER REVISADO ================ */
         footer {
             background: var(--primary);
             color: white;
             padding: 60px 0 20px;
+            position: relative;
         }
         
-        .footer-content {
+        .footer-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        .footer-about h3 {
-            font-size: 1.5rem;
+        .footer-col {
+            padding: 20px;
+        }
+        
+        .footer-logo {
             margin-bottom: 20px;
+        }
+        
+        .footer-logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
             font-family: 'Playfair Display', serif;
         }
         
-        .footer-about p {
-            opacity: 0.8;
-            line-height: 1.7;
+        .footer-logo-text span {
+            color: var(--secondary);
         }
         
-        .footer-contact h3, .footer-social h3 {
+        .footer-about {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .footer-title {
             font-size: 1.3rem;
             margin-bottom: 20px;
-            position: relative;
             padding-bottom: 10px;
+            position: relative;
+            font-weight: 600;
             font-family: 'Playfair Display', serif;
         }
         
-        .footer-contact h3::after, .footer-social h3::after {
+        .footer-title::after {
             content: '';
             position: absolute;
             bottom: 0;
@@ -222,30 +240,173 @@
             background: var(--secondary);
         }
         
-        .footer-contact p {
-            margin-bottom: 15px;
-            opacity: 0.8;
+        .footer-links {
+            list-style: none;
         }
         
-        .footer-social a {
-            display: block;
-            color: #ccc;
-            text-decoration: none;
+        .footer-links li {
             margin-bottom: 12px;
-            transition: var(--transition);
         }
         
-        .footer-social a:hover {
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
             color: white;
             padding-left: 5px;
         }
         
+        .footer-links a::before {
+            content: "•";
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        /* Contatos interativos */
+        .footer-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .contact-trigger {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .contact-trigger:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 10px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(231, 76, 60, 0.2);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+        
+        .contact-trigger:hover .contact-icon {
+            background: var(--secondary);
+            transform: scale(1.1);
+        }
+        
+        .contact-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+        
+        .contact-trigger:hover .contact-label {
+            color: white;
+        }
+        
+        .contact-info-display {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        #contact-info-text {
+            margin: 0;
+            font-size: 16px;
+            color: white;
+            font-weight: 500;
+        }
+        
+        /* Redes Sociais */
+        .footer-social-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: white;
+            color: var(--primary);
+            border-radius: 50%;
+            font-size: 18px;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        .social-link:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
         .footer-bottom {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
-            opacity: 0.7;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-bottom p {
+            margin: 5px 0;
+        }
+        
+        /* Botão Flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
         }
         
         /* Responsividade */
@@ -274,8 +435,13 @@
                 padding: 30px;
             }
             
-            .footer-content {
+            .footer-container {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-trigger {
+                padding: 10px;
             }
         }
     </style>
@@ -343,32 +509,105 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Revisado -->
     <footer id="contato">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <h3>LMFAC Advocacia & Consultoria</h3>
-                    <p>Soluções inteligentes em direito tributário para sua empresa. Combinamos expertise jurídica com abordagem estratégica para proteger seu negócio.</p>
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <div class="footer-logo-text">LMF <span>Advocacia & Consultoria</span></div>
                 </div>
-                <div class="footer-contact">
-                    <h3>Contato</h3>
-                    <p><i class="fas fa-phone"></i> (82) 3436-6497</p>
-                    <p><i class="fas fa-envelope"></i> lmfpro@yahoo.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Maceió, AL</p>
-                </div>
-                <div class="footer-social">
-                    <h3>Redes Sociais</h3>
-                    <a href="https://www.instagram.com/laurafranca.adv/" target="_blank"><i class="fab fa-instagram"></i> Instagram Pessoal</a>
-                    <a href="https://www.instagram.com/lmf.ac_adv.trib/" target="_blank"><i class="fab fa-instagram"></i> Instagram Escritório</a>
-                    <a href="https://www.linkedin.com/in/lmfac" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Pessoal</a>
-                    <a href="https://www.linkedin.com/company/lmf-advocacia-e-consultoria" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Escritório</a>
+                <p class="footer-about">100% DIGITAL Atendemos todo o Brasil Especializados em Direito Tributário, Penal e Empresarial, oferecemos soluções jurídicas inteligentes para proteger e impulsionar seu negócio.</p>
+                
+              <!-- Redes Sociais -->
+                <div>
+                    <h3 class="footer-title">Nossas Redes</h3>
+                    <div class="footer-social-grid">
+                        <a href="https://www.linkedin.com/in/lmfac" class="social-link" target="_blank" title="LinkedIn Pessoal">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/lmf-advocacia-e-consultoria" class="social-link" target="_blank" title="LinkedIn do Escritório">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/laurafranca.adv/#" class="social-link" target="_blank" title="Instagram Pessoal">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.instagram.com/lmf.ac_adv.trib/" class="social-link" target="_blank" title="Instagram do Escritório">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=61572964746886" class="social-link" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>  
+            
+            <div class="footer-col">
+                <h3 class="footer-title">Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="comofunciona.html">Como Funciona</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="ebook.html">Ebook</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                </ul>
+            </div>
+            
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 LMFAC Advocacia. Todos os direitos reservados.</p>
-                <p>Laura de Moura França - OAB/PE 31.768</p>
+            <div class="footer-col">
+                <h3 class="footer-title">Áreas de Atuação</h3>
+                <ul class="footer-links">
+                    <li><a href="servico-recuperacao-fiscal.html">Recuperação Tributária</a></li>
+                    <li><a href="servico-defesa-execucoes.html">Defesa Fiscal</a></li>
+                    <li><a href="servico-crimes-economicos.html">Crimes Econômicos</a></li>
+                    <li><a href="servico-consultoria-juridica.html">Consultoria Jurídica</a></li>
+                    <li><a href="servicos.html">Planejamento Tributário</a></li>
+                </ul>
             </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-title">Contato</h3>
+                
+                <div class="footer-contact-grid">
+                    <div class="contact-trigger" data-info="Maceió, AL">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-label">Localização</div>
+                    </div>
+                    
+                    <div class="contact-trigger" data-info="+55 (82) 3436-6497">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-label">Telefone</div>
+                    </div>
+                    
+                    <div class="contact-trigger" data-info="lmfadvocacia@yahoo.com">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-label">E-mail</div>
+                    </div>
+                    
+                    <div class="contact-trigger" data-info="Seg-Sex: 9h às 18h">
+                        <div class="contact-icon">
+                            <i class="far fa-clock"></i>
+                        </div>
+                        <div class="contact-label">Horário</div>
+                    </div>
+                </div>
+                
+                <!-- Área para mostrar a informação quando clicada -->
+                <div class="contact-info-display">
+                    <p id="contact-info-text">Clique em um ícone para ver a informação</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 LMFAC - Moura França Advocacia e Consultoria. Todos os direitos reservados.</p>
+            <p>CNPJ: 00.000.000/0000-00</p>
+            <!-- OAB removida conforme solicitado -->
         </div>
     </footer>
 
@@ -377,30 +616,39 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <style>
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #128C7E;
-        }
-    </style>
+    <script>
+        // Script para mostrar informações ao clicar nos ícones
+        document.querySelectorAll('.contact-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                // Obter a informação do atributo data-info
+                const info = this.getAttribute('data-info');
+                
+                // Atualizar o texto de exibição
+                document.getElementById('contact-info-text').textContent = info;
+                
+                // Se for email, abrir o cliente de email
+                if (info.includes('@')) {
+                    window.location.href = `mailto:${info}`;
+                }
+            });
+        });
+
+        // Script para rolagem suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
