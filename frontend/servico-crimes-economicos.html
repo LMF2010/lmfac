@@ -3,100 +3,995 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Defesa em Crimes Econômicos - LMFAC Advocacia</title>
+    <title>Defesa em Crimes Econômicos | LMFAC Advocacia</title>
+    <meta name="description" content="Defesa especializada em crimes contra a ordem tributária, sonegação fiscal e lavagem de dinheiro. Atuamos em todo o Brasil para proteger sua empresa e seus direitos.">
+    <meta name="keywords" content="crimes econômicos, defesa tributária, sonegação fiscal, lavagem de dinheiro, ordem tributária, direito penal econômico, defesa jurídica">
+    <meta name="author" content="LMFAC - Moura & França Advocacia">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lmfac.com.br/crimes_economicos.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lmfac.com.br/crimes_economicos.html">
+    <meta property="og:title" content="Defesa em Crimes Econômicos | LMFAC Advocacia">
+    <meta property="og:description" content="Defesa especializada em crimes contra a ordem tributária, sonegação fiscal e lavagem de dinheiro. Atuamos em todo o Brasil.">
+    <meta property="og:image" content="https://lmfac.com.br/assets/images/og-image-crimes.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="LMFAC - Moura & França Advocacia">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lmfac.com.br/crimes_economicos.html">
+    <meta property="twitter:title" content="Defesa em Crimes Econômicos | LMFAC Advocacia">
+    <meta property="twitter:description" content="Defesa especializada em crimes contra a ordem tributária, sonegação fiscal e lavagem de dinheiro.">
+    <meta property="twitter:image" content="https://lmfac.com.br/assets/images/twitter-card-crimes.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* VARIÁVEIS DE CORES */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --light-gray: #e9ecef;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        /* RESET E ESTILOS GERAIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* HEADER */
+        .header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .header__logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .header__nav {
+            display: block;
+        }
+        
+        .header__menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .header__menu-item {
+            margin-left: 25px;
+        }
+        
+        .header__menu-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .header__menu-link:hover {
+            color: var(--secondary);
+        }
+        
+        .header__menu-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .header__menu-link:hover::after {
+            width: 100%;
+        }
+        
+        .header__toggle-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3') center/cover;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+        }
+        
+        .hero--small {
+            padding: 60px 20px;
+        }
+        
+        .hero__title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero__subtitle {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* CONTENT SECTIONS */
+        .content-section {
+            margin-bottom: 60px;
+        }
+        
+        .content-section h2 {
+            color: var(--primary);
+            margin: 30px 0 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .content-section p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .content-section ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .content-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        /* ALERT BOX */
+        .alert-box {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 25px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .alert-box i {
+            color: var(--secondary);
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+        
+        /* CARD GRID */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card__icon {
+            background: var(--primary);
+            color: white;
+            font-size: 2rem;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .card__title {
+            color: var(--primary);
+            margin: 15px 20px 10px;
+            font-size: 1.3rem;
+        }
+        
+        .card__text {
+            padding: 0 20px 20px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* STRATEGY SECTION */
+        .strategy-container {
+            margin: 30px 0;
+        }
+        
+        .strategy-item {
+            display: flex;
+            margin-bottom: 25px;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .strategy-number {
+            background: var(--secondary);
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+        }
+        
+        .strategy-content {
+            padding: 20px;
+        }
+        
+        .strategy-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+        
+        .btn--primary {
+            background: var(--secondary);
+        }
+        
+        .btn--light {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn--light:hover {
+            background: var(--light-gray);
+        }
+        
+        .section__action {
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+        
+        /* CTA SECTION */
+        .cta-section {
+            background: var(--primary);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .cta-content p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 992px) {
+            .header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header__menu {
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 20px;
+            }
+            
+            .header__menu-item {
+                margin: 0 10px 10px;
+            }
+            
+            .hero__title {
+                font-size: 2.2rem;
+            }
+            
+            .card-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 20px;
+            }
+            
+            .hero--small {
+                padding: 50px 20px;
+            }
+            
+            .hero__title {
+                font-size: 2rem;
+            }
+            
+            .header__toggle-menu {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .header__nav {
+                display: none;
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            .header__nav.active {
+                display: block;
+            }
+            
+            .header__menu {
+                flex-direction: column;
+            }
+            
+            .header__menu-item {
+                margin: 0 0 15px;
+            }
+            
+            .strategy-item {
+                flex-direction: column;
+            }
+            
+            .strategy-number {
+                min-width: 100%;
+                padding: 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero__title {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-    <header>
+    <header class="header">
         <div class="container">
-            <a href="index.html" class="logo">LMFAC Advocacia</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="ebook.html">Ebook</a></li>
-                    <li><a href="#contato">Contato</a></li>
+            <a href="index.html" class="header__logo">LMFAC</a>
+            <nav class="header__nav">
+                <ul class="header__menu">
+                    <li class="header__menu-item"><a href="index.html" class="header__menu-link">Início</a></li>
+                    <li class="header__menu-item"><a href="#servicos" class="header__menu-link">Serviços</a></li>
+                    <li class="header__menu-item"><a href="#sobre" class="header__menu-link">Sobre</a></li>
+                    <li class="header__menu-item"><a href="#contato" class="header__menu-link">Contato</a></li>
+                    <li class="header__menu-item"><a href="ebook.html" class="header__menu-link">E-book</a></li>
+                    <li class="header__menu-item"><a href="blog.html" class="header__menu-link">Blog</a></li>
                 </ul>
             </nav>
+            <button class="header__toggle-menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
     <main>
-        <section class="page-header">
-            <h1>Defesa em Crimes Econômicos</h1>
-            <p>Atuação especializada em crimes contra a ordem tributária e sonegação fiscal.</p>
-        </section>
-
-        <section class="section-padding">
-            <div class="container content-section">
-                <p>Crimes econômicos e contra a ordem tributária são infrações graves que podem resultar em pesadas multas, prisão e danos irreparáveis à reputação de uma empresa e de seus gestores. A complexidade da legislação brasileira exige uma defesa jurídica altamente especializada e estratégica para garantir os direitos e a liberdade dos envolvidos.</p>
-
-                <h2>Tipos de Crimes Econômicos e Tributários que Atuamos:</h2>
-                <ul>
-                    <li><strong>Sonegação Fiscal:</strong> Omissão de informações ou declarações falsas para evitar o pagamento de tributos.</li>
-                    <li><strong>Fraude à Execução Fiscal:</strong> Tentativa de alienar ou onerar bens para frustrar a cobrança de dívidas fiscais.</li>
-                    <li><strong>Crimes Contra a Ordem Tributária:</strong> Incluem apropriação indébita tributária, falsificação de documentos fiscais, entre outros.</li>
-                    <li><strong>Lavagem de Dinheiro:</strong> Ocultação ou dissimulação da origem, localização, movimentação ou propriedade de bens, direitos ou valores provenientes de infração penal.</li>
-                    <li><strong>Crimes Contra o Sistema Financeiro Nacional:</strong> Operações financeiras irregulares, gestão fraudulenta, etc.</li>
-                </ul>
-
-                <h2>Nossa Estratégia de Defesa:</h2>
-                <p>Atuamos desde a fase de investigação até o julgamento final, oferecendo uma defesa completa e personalizada:</p>
-                <ul>
-                    <li><strong>Análise Detalhada do Caso:</strong> Investigação minuciosa dos fatos e documentos para identificar irregularidades e construir a melhor estratégia.</li>
-                    <li><strong>Atuação Preventiva (Compliance):</strong> Orientação para empresas e gestores sobre as melhores práticas para evitar a ocorrência de crimes econômicos e tributários.</li>
-                    <li><strong>Defesa em Inquéritos e Processos:</strong> Acompanhamento em todas as fases processuais, apresentação de recursos e habeas corpus.</li>
-                    <li><strong>Negociação com Autoridades:</strong> Busca por acordos de não persecução penal ou colaboração premiada, quando cabível e vantajoso para o cliente.</li>
-                </ul>
-
-                <h2>Por que uma Defesa Especializada é Crucial?</h2>
-                <p>A legislação penal econômica é complexa e em constante mudança. Um advogado especializado possui o conhecimento técnico e a experiência necessária para lidar com as particularidades desses casos, protegendo seus direitos e buscando a melhor solução para sua situação.</p>
+        <section class="hero hero--small">
+            <div class="container">
+                <h1 class="hero__title">Defesa em Crimes Econômicos</h1>
+                <p class="hero__subtitle">Proteção jurídica especializada em crimes contra a ordem tributária, sonegação fiscal e lavagem de dinheiro</p>
             </div>
         </section>
 
-        <section class="cta-section section-padding">
+        <section class="content-section">
             <div class="container">
-                <h2>Enfrentando uma acusação? Aja rapidamente.</h2>
-                  
+                <p>Crimes econômicos e contra a ordem tributária são infrações graves que podem resultar em pesadas multas, prisão e danos irreparáveis à reputação de uma empresa e de seus gestores. A complexidade da legislação brasileira exige uma defesa jurídica altamente especializada e estratégica para garantir os direitos e a liberdade dos envolvidos.</p>
 
-                <a href="#contato" class="cta-button">Solicitar Análise Confidencial</a>
+                <div class="alert-box">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p>Atuamos em todas as fases do processo, desde a investigação preliminar até o julgamento final, garantindo uma defesa completa e personalizada.</p>
+                </div>
+
+                <h2>Tipos de Crimes Econômicos e Tributários que Atuamos:</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card__icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3 class="card__title">Sonegação Fiscal</h3>
+                        <p class="card__text">Omissão de informações ou declarações falsas para evitar o pagamento de tributos.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__icon">
+                            <i class="fas fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="card__title">Fraude à Execução Fiscal</h3>
+                        <p class="card__text">Tentativa de alienar ou onerar bens para frustrar a cobrança de dívidas fiscais.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3 class="card__title">Crimes Contra a Ordem Tributária</h3>
+                        <p class="card__text">Incluem apropriação indébita tributária, falsificação de documentos fiscais, entre outros.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3 class="card__title">Lavagem de Dinheiro</h3>
+                        <p class="card__text">Ocultação ou dissimulação da origem, localização, movimentação ou propriedade de bens, direitos ou valores provenientes de infração penal.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card__icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="card__title">Crimes Contra o Sistema Financeiro Nacional</h3>
+                        <p class="card__text">Operações financeiras irregulares, gestão fraudulenta, etc.</p>
+                    </div>
+                </div>
+
+                <h2>Nossa Estratégia de Defesa:</h2>
+                <div class="strategy-container">
+                    <div class="strategy-item">
+                        <div class="strategy-number">1</div>
+                        <div class="strategy-content">
+                            <h3>Análise Detalhada do Caso</h3>
+                            <p>Investigação minuciosa dos fatos e documentos para identificar irregularidades e construir a melhor estratégia.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="strategy-item">
+                        <div class="strategy-number">2</div>
+                        <div class="strategy-content">
+                            <h3>Atuação Preventiva (Compliance)</h3>
+                            <p>Orientação para empresas e gestores sobre as melhores práticas para evitar a ocorrência de crimes econômicos e tributários.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="strategy-item">
+                        <div class="strategy-number">3</div>
+                        <div class="strategy-content">
+                            <h3>Defesa em Inquéritos e Processos</h3>
+                            <p>Acompanhamento em todas as fases processuais, apresentação de recursos e habeas corpus.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="strategy-item">
+                        <div class="strategy-number">4</div>
+                        <div class="strategy-content">
+                            <h3>Negociação com Autoridades</h3>
+                            <p>Busca por acordos de não persecução penal ou colaboração premiada, quando cabível e vantajoso para o cliente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Por que uma Defesa Especializada é Crucial?</h2>
+                <p>A legislação penal econômica é complexa e em constante mudança. Um advogado especializado possui o conhecimento técnico e a experiência necessária para lidar com as particularidades desses casos, protegendo seus direitos e buscando a melhor solução para sua situação.</p>
+                
+                <div class="section__action">
+                    <a href="#contato" class="btn btn--primary">
+                        <i class="fas fa-shield-alt"></i> Solicitar Análise Confidencial
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Enfrentando uma acusação? Aja rapidamente.</h2>
+                    <p>O tempo é crucial em processos de crimes econômicos. Entre em contato para uma consultoria especializada e defesa estratégica.</p>
+                    <a href="#contato" class="btn btn--light">Fale com um Especialista</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer id="contato">
-        <div class="container">
-            <div class="footer-content">
+    <!-- RODAPÉ (MANTIDO EXATAMENTE COMO ESTÁ) -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodapé Finalizado - LMFAC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ESTILOS ESPECÍFICOS DO RODAPÉ */
+        .lmf-footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0 20px;
+            width: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+        
+        .footer-column {
+            margin-bottom: 15px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 8px;
+            color: #e74c3c;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #e74c3c;
+        }
+        
+        .footer-about {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: #e74c3c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 1.3rem;
+            color: white;
+        }
+        
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .digital-badge {
+            background: rgba(255,255,255,0.1);
+            color: #e74c3c;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 6px 0 10px;
+            width: fit-content;
+        }
+        
+        .footer-about p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            opacity: 0.9;
+            font-size: 0.95rem;
+            color: #f0f0f0;
+        }
+        
+        .areas-list {
+            list-style: none;
+            margin-top: 8px;
+            padding: 0;
+        }
+        
+        .areas-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #f0f0f0;
+        }
+        
+        .areas-list li i {
+            color: #e74c3c;
+            margin-right: 8px;
+            width: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 3px;
+        }
+        
+        .footer-links a i {
+            color: #e74c3c;
+            margin-right: 8px;
+            width: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .contact-info li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: #f0f0f0;
+        }
+        
+        .contact-info i {
+            color: #e74c3c;
+            margin-right: 12px;
+            margin-top: 3px;
+            min-width: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .social-title {
+            font-size: 1.1rem;
+            margin: 15px 0 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #e74c3c;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        .footer-social a:hover {
+            background: #e74c3c;
+            transform: translateY(-3px);
+        }
+        
+        .social-tooltip {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .footer-social a:hover .social-tooltip {
+            opacity: 1;
+            bottom: -35px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 15px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        .footer-copyright {
+            margin-bottom: 6px;
+        }
+        
+        .footer-legal {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 900px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .footer-column {
+                margin-bottom: 10px;
+            }
+            
+            .brand {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .brand-icon {
+                margin-bottom: 8px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .lmf-footer {
+                padding: 30px 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- CONTEÚDO DA SUA PÁGINA AQUI -->
+
+    <!-- RODAPÉ FINALIZADO (COPIE A PARTIR DAQUI) -->
+    <footer class="lmf-footer">
+        <div class="footer-content">
+            <!-- BLOCO 1: SOBRE A LMF -->
+            <div class="footer-column">
                 <div class="footer-about">
-                    <h3>LMFAC Advocacia & Consultoria</h3>
-                    <p>Soluções inteligentes em direito tributário para sua empresa.</p>
-                </div>
-                <div class="footer-contact">
-                    <h3>Contato</h3>
-                    <p>Telefone/WhatsApp: (82) 3436-6497</p>
-                    <p>E-mail: lmfpro@yahoo.com</p>
-                </div>
-                <div class="footer-social">
-                    <h3>Redes Sociais</h3>
-                    <a href="https://www.instagram.com/laurafranca.adv/" target="_blank">Instagram Pessoal</a>
-                    <a href="https://www.instagram.com/lmf.ac_adv.trib/" target="_blank">Instagram Escritório</a>
-                    <a href="https://www.linkedin.com/in/lmfac" target="_blank">LinkedIn Pessoal</a>
-                    <a href="https://www.linkedin.com/company/lmf-advocacia-e-consultoria" target="_blank">LinkedIn Escritório</a>
+                    <div class="brand">
+                        <div class="brand-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="brand-name">LMF Advocacia & Consultoria</div>
+                    </div>
+                    
+                    <div class="digital-badge">
+                        <i class="fas fa-globe"></i> 100% DIGITAL - Atendemos todo o Brasil
+                    </div>
+                    
+                    <p>Especializados em Direito Tributário, Penal e Empresarial, oferecemos soluções jurídicas inteligentes para proteger e impulsionar seu negócio.</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 LMFAC Advocacia. Todos os direitos reservados.</p>
-                <p style="font-size: 0.8em; opacity: 0.7;">Laura de Moura França - OAB/PE 31.768</p>
+            
+            <!-- BLOCO 2: ÁREAS DE ATUAÇÃO -->
+            <div class="footer-column">
+                <h3>Áreas de Atuação</h3>
+                <ul class="areas-list">
+                    <li><i class="fas fa-arrow-right"></i> Recuperação Tributária</li>
+                    <li><i class="fas fa-arrow-right"></i> Defesa Fiscal</li>
+                    <li><i class="fas fa-arrow-right"></i> Crimes Econômicos</li>
+                    <li><i class="fas fa-arrow-right"></i> Consultoria Jurídica</li>
+                    <li><i class="fas fa-arrow-right"></i> Planejamento Tributário</li>
+                </ul>
+            </div>
+            
+            <!-- BLOCO 3: LINKS RÁPIDOS -->
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="como-funciona.html"><i class="fas fa-cogs"></i> Como Funciona</a></li>
+                    <li><a href="index.html#servicos"><i class="fas fa-briefcase"></i> Serviços</a></li>
+                    <li><a href="ebook.html"><i class="fas fa-book"></i> Ebook</a></li>
+                    <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="sobre.html"><i class="fas fa-users"></i> Sobre Nós</a></li>
+                </ul>
+            </div>
+            
+            <!-- BLOCO 4: CONTATO + REDES SOCIAIS -->
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <ul class="contact-info">
+                    <li>
+                        <a href="https://maps.google.com/?q=Maceió,AL" target="_blank" title="Localização">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+558234366497" title="Telefone">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:lmfadvocacia@yahoo.com" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="far fa-clock"></i>
+                        <span>Seg-Sex: 9h às 18h</span>
+                    </li>
+                </ul>
+                
+                <div class="social-title">Nossas Redes</div>
+                <div class="footer-social">
+                    <!-- LinkedIn Laura -->
+                    <a href="https://www.linkedin.com/in/lmfac" target="_blank" title="Laura França - LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="social-tooltip">Laura França</span>
+                    </a>
+                    
+                    <!-- LinkedIn Escritório -->
+                    <a href="https://www.linkedin.com/company/lmf-advocacia-e-consultoria" target="_blank" title="LMF Advocacia - LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="social-tooltip">Escritório</span>
+                    </a>
+                    
+                    <!-- Instagram Laura -->
+                    <a href="https://www.instagram.com/laurafranca.adv/#" target="_blank" title="Laura França - Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-tooltip">Laura França</span>
+                    </a>
+                    
+                    <!-- Instagram Escritório -->
+                    <a href="https://www.instagram.com/lmf.ac_adv.trib/" target="_blank" title="LMF Advocacia - Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-tooltip">Escritório</span>
+                    </a>
+                    
+                    <!-- Facebook Escritório -->
+                    <a href="https://www.facebook.com/profile.php?id=61572964746886" target="_blank" title="LMF Advocacia - Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="social-tooltip">Facebook</span>
+                    </a>
+                    
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/558234366497" target="_blank" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="social-tooltip">WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                &copy; 2025 LMFAC - Moura França Advocacia e Consultoria. Todos os direitos reservados.
+            </div>
+            <div class="footer-legal">
+                CNPJ: 00.000.000/0000-00 
             </div>
         </div>
     </footer>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/agendamento_novo.js"></script>
-<script src="assets/js/chatbot.js"></script>
+    <!-- ATÉ AQUI -->
+
+
+    <script>
+        // Script para o menu mobile
+        document.querySelector('.header__toggle-menu').addEventListener('click', function() {
+            document.querySelector('.header__nav').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
-

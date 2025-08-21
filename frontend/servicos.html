@@ -508,108 +508,408 @@
             </div>
         </section>
     </main>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodapé Finalizado - LMFAC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ESTILOS ESPECÍFICOS DO RODAPÉ */
+        .lmf-footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0 20px;
+            width: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+        
+        .footer-column {
+            margin-bottom: 15px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 8px;
+            color: #e74c3c;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #e74c3c;
+        }
+        
+        .footer-about {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .brand {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .brand-icon {
+            width: 40px;
+            height: 40px;
+            background: #e74c3c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 1.3rem;
+            color: white;
+        }
+        
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: white;
+        }
+        
+        .digital-badge {
+            background: rgba(255,255,255,0.1);
+            color: #e74c3c;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin: 6px 0 10px;
+            width: fit-content;
+        }
+        
+        .footer-about p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            opacity: 0.9;
+            font-size: 0.95rem;
+            color: #f0f0f0;
+        }
+        
+        .areas-list {
+            list-style: none;
+            margin-top: 8px;
+            padding: 0;
+        }
+        
+        .areas-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #f0f0f0;
+        }
+        
+        .areas-list li i {
+            color: #e74c3c;
+            margin-right: 8px;
+            width: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 3px;
+        }
+        
+        .footer-links a i {
+            color: #e74c3c;
+            margin-right: 8px;
+            width: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .contact-info li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: #f0f0f0;
+        }
+        
+        .contact-info i {
+            color: #e74c3c;
+            margin-right: 12px;
+            margin-top: 3px;
+            min-width: 18px;
+            font-size: 0.9rem;
+        }
+        
+        .social-title {
+            font-size: 1.1rem;
+            margin: 15px 0 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: #e74c3c;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        .footer-social a:hover {
+            background: #e74c3c;
+            transform: translateY(-3px);
+        }
+        
+        .social-tooltip {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .footer-social a:hover .social-tooltip {
+            opacity: 1;
+            bottom: -35px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 15px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        .footer-copyright {
+            margin-bottom: 6px;
+        }
+        
+        .footer-legal {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 900px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .footer-column {
+                margin-bottom: 10px;
+            }
+            
+            .brand {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .brand-icon {
+                margin-bottom: 8px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .lmf-footer {
+                padding: 30px 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- CONTEÚDO DA SUA PÁGINA AQUI -->
 
-    <!-- Footer Revisado -->
-    <footer id="contato">
-        <div class="footer-container">
-            <div class="footer-col">
-                <div class="footer-logo">
-                    <div class="footer-logo-text">LMF <span>Advocacia & Consultoria</span></div>
+    <!-- RODAPÉ FINALIZADO (COPIE A PARTIR DAQUI) -->
+    <footer class="lmf-footer">
+        <div class="footer-content">
+            <!-- BLOCO 1: SOBRE A LMF -->
+            <div class="footer-column">
+                <div class="footer-about">
+                    <div class="brand">
+                        <div class="brand-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="brand-name">LMF Advocacia & Consultoria</div>
+                    </div>
+                    
+                    <div class="digital-badge">
+                        <i class="fas fa-globe"></i> 100% DIGITAL - Atendemos todo o Brasil
+                    </div>
+                    
+                    <p>Especializados em Direito Tributário, Penal e Empresarial, oferecemos soluções jurídicas inteligentes para proteger e impulsionar seu negócio.</p>
                 </div>
-                <p class="footer-about">100% DIGITAL Atendemos todo o Brasil Especializados em Direito Tributário, Penal e Empresarial, oferecemos soluções jurídicas inteligentes para proteger e impulsionar seu negócio.</p>
-                
-              <!-- Redes Sociais -->
-                <div>
-                    <h3 class="footer-title">Nossas Redes</h3>
-                    <div class="footer-social-grid">
-                        <a href="https://www.linkedin.com/in/lmfac" class="social-link" target="_blank" title="LinkedIn Pessoal">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/lmf-advocacia-e-consultoria" class="social-link" target="_blank" title="LinkedIn do Escritório">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://www.instagram.com/laurafranca.adv/#" class="social-link" target="_blank" title="Instagram Pessoal">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.instagram.com/lmf.ac_adv.trib/" class="social-link" target="_blank" title="Instagram do Escritório">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=61572964746886" class="social-link" target="_blank" title="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </div>  
+            </div>
             
-            <div class="footer-col">
-                <h3 class="footer-title">Links Rápidos</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="comofunciona.html">Como Funciona</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
-                    <li><a href="ebook.html">Ebook</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="sobre.html">Sobre Nós</a></li>
+            <!-- BLOCO 2: ÁREAS DE ATUAÇÃO -->
+            <div class="footer-column">
+                <h3>Áreas de Atuação</h3>
+                <ul class="areas-list">
+                    <li><i class="fas fa-arrow-right"></i> Recuperação Tributária</li>
+                    <li><i class="fas fa-arrow-right"></i> Defesa Fiscal</li>
+                    <li><i class="fas fa-arrow-right"></i> Crimes Econômicos</li>
+                    <li><i class="fas fa-arrow-right"></i> Consultoria Jurídica</li>
+                    <li><i class="fas fa-arrow-right"></i> Planejamento Tributário</li>
                 </ul>
             </div>
             
-                </div>
-            </div>
-            <div class="footer-col">
-                <h3 class="footer-title">Áreas de Atuação</h3>
+            <!-- BLOCO 3: LINKS RÁPIDOS -->
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
                 <ul class="footer-links">
-                    <li><a href="servico-recuperacao-fiscal.html">Recuperação Tributária</a></li>
-                    <li><a href="servico-defesa-execucoes.html">Defesa Fiscal</a></li>
-                    <li><a href="servico-crimes-economicos.html">Crimes Econômicos</a></li>
-                    <li><a href="servico-consultoria-juridica.html">Consultoria Jurídica</a></li>
-                    <li><a href="servicos.html">Planejamento Tributário</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="como-funciona.html"><i class="fas fa-cogs"></i> Como Funciona</a></li>
+                    <li><a href="index.html#servicos"><i class="fas fa-briefcase"></i> Serviços</a></li>
+                    <li><a href="ebook.html"><i class="fas fa-book"></i> Ebook</a></li>
+                    <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="sobre.html"><i class="fas fa-users"></i> Sobre Nós</a></li>
                 </ul>
             </div>
             
-            <div class="footer-col">
-                <h3 class="footer-title">Contato</h3>
-                
-                <div class="footer-contact-grid">
-                    <div class="contact-trigger" data-info="Maceió, AL">
-                        <div class="contact-icon">
+            <!-- BLOCO 4: CONTATO + REDES SOCIAIS -->
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <ul class="contact-info">
+                    <li>
+                        <a href="https://maps.google.com/?q=Maceió,AL" target="_blank" title="Localização">
                             <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-label">Localização</div>
-                    </div>
-                    
-                    <div class="contact-trigger" data-info="+55 (82) 3436-6497">
-                        <div class="contact-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+558234366497" title="Telefone">
                             <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-label">Telefone</div>
-                    </div>
-                    
-                    <div class="contact-trigger" data-info="lmfadvocacia@yahoo.com">
-                        <div class="contact-icon">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:lmfadvocacia@yahoo.com" title="Email">
                             <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-label">E-mail</div>
-                    </div>
-                    
-                    <div class="contact-trigger" data-info="Seg-Sex: 9h às 18h">
-                        <div class="contact-icon">
-                            <i class="far fa-clock"></i>
-                        </div>
-                        <div class="contact-label">Horário</div>
-                    </div>
-                </div>
+                        </a>
+                    </li>
+                    <li>
+                        <i class="far fa-clock"></i>
+                        <span>Seg-Sex: 9h às 18h</span>
+                    </li>
+                </ul>
                 
-                <!-- Área para mostrar a informação quando clicada -->
-                <div class="contact-info-display">
-                    <p id="contact-info-text">Clique em um ícone para ver a informação</p>
+                <div class="social-title">Nossas Redes</div>
+                <div class="footer-social">
+                    <!-- LinkedIn Laura -->
+                    <a href="https://www.linkedin.com/in/lmfac" target="_blank" title="Laura França - LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="social-tooltip">Laura França</span>
+                    </a>
+                    
+                    <!-- LinkedIn Escritório -->
+                    <a href="https://www.linkedin.com/company/lmf-advocacia-e-consultoria" target="_blank" title="LMF Advocacia - LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span class="social-tooltip">Escritório</span>
+                    </a>
+                    
+                    <!-- Instagram Laura -->
+                    <a href="https://www.instagram.com/laurafranca.adv/#" target="_blank" title="Laura França - Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-tooltip">Laura França</span>
+                    </a>
+                    
+                    <!-- Instagram Escritório -->
+                    <a href="https://www.instagram.com/lmf.ac_adv.trib/" target="_blank" title="LMF Advocacia - Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span class="social-tooltip">Escritório</span>
+                    </a>
+                    
+                    <!-- Facebook Escritório -->
+                    <a href="https://www.facebook.com/profile.php?id=61572964746886" target="_blank" title="LMF Advocacia - Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span class="social-tooltip">Facebook</span>
+                    </a>
+                    
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/558234366497" target="_blank" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span class="social-tooltip">WhatsApp</span>
+                    </a>
                 </div>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 LMFAC - Moura França Advocacia e Consultoria. Todos os direitos reservados.</p>
-            <p>CNPJ: 00.000.000/0000-00</p>
-            <!-- OAB removida conforme solicitado -->
+            <div class="footer-copyright">
+                &copy; 2025 LMFAC - Moura França Advocacia e Consultoria. Todos os direitos reservados.
+            </div>
+            <div class="footer-legal">
+                CNPJ: 00.000.000/0000-00 
+            </div>
         </div>
     </footer>
+    <!-- ATÉ AQUI -->
+</body>
+</html>
 
     <!-- Botão Flutuante do WhatsApp -->
     <a href="https://wa.me/558234366497" class="whatsapp-float" target="_blank">
