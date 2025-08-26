@@ -1,0 +1,23 @@
+PARA O PERFIL DO ESCRITÓRIO (Sério, Técnico, Formal)
+A ideia aqui é seriedade e clareza. Precisamos de fontes que sejam elegantes, mas extremamente legíveis.
+
+Fonte para TÍTULOS (Headlines):
+Playfair Display ou EB Garamond.
+Por quê? São fontes serifadas (com pezinho) que transmitem autoridade, tradição e confiança – perfeito para um escritório de advocacia.
+
+Fonte para TEXTOS (Body/Subtítulos):
+Montserrat ou Lato.
+Por quê? São fontes sans-serif (sem pezinho) limpas, modernas e super legíveis até em tamanhos pequenos. A Montserrat já é usada no seu site, então mantém a consistência.
+
+Exemplo de Combinação do Escritório:
+Título: Playfair Display (em #2c3e50)
+Texto: Montserrat Light (em #333333)
+
+REGRAS DE OURO PARA NUNCA MAIS ERRAR:
+Máximo de 2 Fontes: Uma para título, uma para texto. Ponto final.
+
+Contraste é Tudo: Se a fonte do título é decorativa (Brown Sugar), o texto PRECISA ser super simples (Montserrat). E vice-versa.
+
+Hierarquia: Título > Subtítulo > Texto. Use o tamanho e o peso (negrito, light) para criar hierarquia, NÃO fontes diferentes.
+
+Canva é uma Criança: Ele sugere fontes horríveis. IGNORE. Use apenas as que você salvou no seu Brand Kit.
