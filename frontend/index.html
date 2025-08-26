@@ -475,6 +475,7 @@
                     <li><a href="ebook.html"><i class="fas fa-book"></i> Ebook</a></li>
                     <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
                     <li><a href="sobre.html"><i class="fas fa-users"></i> Sobre Nós</a></li>
+                    <li><a href="frontend/politica-de-privacidade.html"><i class="fas fa-shield-alt"></i> Política de Privacidade</a></li>
                 </ul>
             </div>
             
@@ -546,7 +547,7 @@
         
         <div class="footer-bottom">
             <div class="footer-copyright">
-                &copy; 2025 LMFAC - Moura França Advocacia e Consultoria. Todos os direitos reservados.
+                &copy; 2025 LMFAC - Advocacia e Consultoria. Todos os direitos reservados.
             </div>
             <div class="footer-legal">
                 CNPJ: 00.000.000/0000-00 
@@ -585,5 +586,35 @@
             }
         });
     </script>
+<div id="cookieConsent" style="position: fixed; bottom: 0; width: 100%; background: #2c3e50; color: white; padding: 15px; z-index: 1000; display: none;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      Este site utiliza cookies para melhorar sua experiência. 
+      <a href="politica-de-privacidade.html" style="color: #3498db; text-decoration: underline;">
+        Saiba mais
+      </a>
+    </div>
+    <div>
+      <button id="acceptCookies" style="background: #27ae60; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">
+        Aceitar
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Exibir o banner de cookies após o carregamento da página
+document.addEventListener('DOMContentLoaded', function() {
+  if (!localStorage.getItem('cookiesAccepted')) {
+    document.getElementById('cookieConsent').style.display = 'block';
+  }
+  
+  // Ao clicar em aceitar
+  document.getElementById('acceptCookies').addEventListener('click', function() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookieConsent').style.display = 'none';
+  });
+});
+</script>
 </body>
 </html>
